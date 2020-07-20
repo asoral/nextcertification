@@ -1,0 +1,50 @@
+{
+ "cards": [
+  {
+   "hidden": 0,
+   "label": "Application",
+   "links": "[   \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Application\",\n        \"label\": \"Application\",\n        \"description\": \"Application\",\n        \"onboard\": 1   \n    }\n]"
+  },
+  {
+   "hidden": 0,
+   "label": "Settings",
+   "links": "[   \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Service Types\",\n        \"label\": \"Service Type\",\n        \"description\": \"Service Type\"\n         \n    },\n    \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Sections\",\n        \"label\": \"Sections\",\n        \"description\": \"Sections\"\n          \n    },\n    \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Product Category\",\n        \"label\": \"Product Category\",\n        \"description\": \"Product Category\"\n         \n    },\n    \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Product Sub Category\",\n        \"label\": \"Product Sub-Category\",\n        \"description\": \"Product Sub-Category\"\n         \n    },\n    \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Standards\",\n        \"label\": \"Standards\",\n        \"description\": \"Standards\"\n       \n    }\n]"
+  },
+  {
+   "hidden": 0,
+   "label": "Reports",
+   "links": "[   \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Applications\",\n        \"label\": \"Reports\",\n        \"description\": \"Next Certifications reports\"\n        \n    }\n]"
+  }
+ ],
+ "category": "Modules",
+ "charts": [
+  {
+   "chart_name": "Date wise Application Creation",
+   "label": "Date wise Application Creation"
+  }
+ ],
+ "creation": "2020-07-14 10:49:22.618438",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Desk Page",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_standard": 1,
+ "label": "Certificate",
+ "modified": "2020-07-16 17:48:52.805066",
+ "modified_by": "Administrator",
+ "module": "Nextcertification",
+ "name": "Certificate",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
+ "shortcuts": [
+  {
+   "label": "Application",
+   "link_to": "Application",
+   "type": "DocType"
+  }
+ ]
+}

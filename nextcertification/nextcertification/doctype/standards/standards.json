@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "autoname": "STD-.#####",
+ "creation": "2020-07-13 18:59:54.338042",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "english_name",
+  "arabic_name",
+  "prod_category",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "english_name",
+   "fieldtype": "Data",
+   "label": "English Name"
+  },
+  {
+   "fieldname": "arabic_name",
+   "fieldtype": "Data",
+   "label": "Arabic Name"
+  },
+  {
+   "fieldname": "prod_category",
+   "fieldtype": "Link",
+   "label": "Product Categories",
+   "options": "Product Category"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Select",
+   "label": "Is Active",
+   "options": "\nYes\nNo"
+  }
+ ],
+ "links": [],
+ "modified": "2020-07-14 11:29:18.968511",
+ "modified_by": "Administrator",
+ "module": "Nextcertification",
+ "name": "Standards",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "english_name,arabic_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "english_name",
+ "track_changes": 1
+}

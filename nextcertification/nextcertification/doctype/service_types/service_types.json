@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "autoname": "SER-TYP-.#####",
+ "creation": "2020-07-13 18:38:32.710781",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "english_name",
+  "arabic_name",
+  "is_audit",
+  "is_certificate_req",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "english_name",
+   "fieldtype": "Data",
+   "label": "English Name"
+  },
+  {
+   "fieldname": "arabic_name",
+   "fieldtype": "Data",
+   "label": "Arabic Name"
+  },
+  {
+   "fieldname": "is_audit",
+   "fieldtype": "Select",
+   "label": "Is Audit",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "is_certificate_req",
+   "fieldtype": "Select",
+   "label": "Is Certificate Required",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Select",
+   "label": "Is Active",
+   "options": "\nYes\nNo"
+  }
+ ],
+ "links": [],
+ "modified": "2020-07-14 11:28:31.300587",
+ "modified_by": "Administrator",
+ "module": "Nextcertification",
+ "name": "Service Types",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "english_name,arabic_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "english_name",
+ "track_changes": 1
+}

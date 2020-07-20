@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "autoname": "PROD-.YY.-.#####",
+ "creation": "2020-07-13 16:14:43.950619",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "brand_name",
+  "manufacturer",
+  "product_test_eport",
+  "annual_energy_consumption",
+  "column_break",
+  "model_number",
+  "country_of_origin",
+  "applicable_standards",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "brand_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": " Brand Name"
+  },
+  {
+   "fieldname": "manufacturer",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Manufacturer"
+  },
+  {
+   "fieldname": "product_test_eport",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Test Report"
+  },
+  {
+   "fieldname": "annual_energy_consumption",
+   "fieldtype": "Text",
+   "label": "Annual Energy Consumption"
+  },
+  {
+   "fieldname": "column_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "model_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Model Number"
+  },
+  {
+   "fieldname": "country_of_origin",
+   "fieldtype": "Link",
+   "label": "Country of Origin",
+   "options": "Country"
+  },
+  {
+   "fieldname": "applicable_standards",
+   "fieldtype": "Link",
+   "label": "Applicable Standards",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2020-07-16 09:44:32.393947",
+ "modified_by": "Administrator",
+ "module": "Nextcertification",
+ "name": "Product",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
