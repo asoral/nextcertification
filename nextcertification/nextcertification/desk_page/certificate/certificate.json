@@ -3,7 +3,7 @@
   {
    "hidden": 0,
    "label": "Application",
-   "links": "[   \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Application\",\n        \"label\": \"Application\",\n        \"description\": \"Application\",\n        \"onboard\": 1   \n    }\n]"
+   "links": "[   \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Application\",\n        \"label\": \"Application\",\n        \"description\": \"Application\",\n        \"onboard\": 1   \n    },\n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Product Test Report\",\n        \"label\": \"Product Test Report\",\n        \"description\": \"Application Product Test Report\",\n        \"onboard\": 1   \n    },\n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Certificate\",\n        \"label\": \"Certificate\",\n        \"description\": \"Application Certificate\",\n        \"onboard\": 1   \n    }\n]"
   },
   {
    "hidden": 0,
@@ -33,7 +33,7 @@
  "idx": 0,
  "is_standard": 1,
  "label": "Certificate",
- "modified": "2020-07-16 17:48:52.805066",
+ "modified": "2020-07-22 09:51:57.016743",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Certificate",

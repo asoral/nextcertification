@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "SER-TYP-.#####",
+ "autoname": "field:english_name",
  "creation": "2020-07-13 18:38:32.710781",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -16,7 +16,9 @@
   {
    "fieldname": "english_name",
    "fieldtype": "Data",
-   "label": "English Name"
+   "in_list_view": 1,
+   "label": "English Name",
+   "unique": 1
   },
   {
    "fieldname": "arabic_name",
@@ -24,26 +26,26 @@
    "label": "Arabic Name"
   },
   {
+   "default": "0",
    "fieldname": "is_audit",
-   "fieldtype": "Select",
-   "label": "Is Audit",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Is Audit"
   },
   {
+   "default": "0",
    "fieldname": "is_certificate_req",
-   "fieldtype": "Select",
-   "label": "Is Certificate Required",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Is Certificate Required"
   },
   {
+   "default": "0",
    "fieldname": "is_active",
-   "fieldtype": "Select",
-   "label": "Is Active",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Is Active"
   }
  ],
  "links": [],
- "modified": "2020-07-14 11:28:31.300587",
+ "modified": "2020-07-21 11:41:50.398091",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Service Types",

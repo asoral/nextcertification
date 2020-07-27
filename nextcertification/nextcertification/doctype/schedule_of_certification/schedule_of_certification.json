@@ -1,0 +1,246 @@
+{
+ "actions": [],
+ "creation": "2020-07-22 11:28:51.646258",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sb2",
+  "application",
+  "customer_name",
+  "address",
+  "is_one",
+  "cb",
+  "date",
+  "service_type",
+  "product_category",
+  "sb_certificate",
+  "esma_reference",
+  "certificate_pfacility",
+  "certificate_pname_eng",
+  "test_report",
+  "test_report_child",
+  "issue_date",
+  "cb1",
+  "esma_certificate_no",
+  "certificate_bname",
+  "certificate_pname_ara",
+  "app_standards",
+  "end_date",
+  "sb_qrcode",
+  "qr_code",
+  "amended_from",
+  "sb_product",
+  "click_to",
+  "product_test",
+  "sb_no_certifiate",
+  "head"
+ ],
+ "fields": [
+  {
+   "fieldname": "esma_reference",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "ESMA Reference"
+  },
+  {
+   "fieldname": "certificate_pfacility",
+   "fieldtype": "Data",
+   "label": "Certificate Product Facility"
+  },
+  {
+   "fieldname": "certificate_pname_eng",
+   "fieldtype": "Data",
+   "label": "Certificate Product Name English"
+  },
+  {
+   "fieldname": "test_report",
+   "fieldtype": "Link",
+   "label": "Test Report",
+   "options": "Product Test Report"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "esma_certificate_no",
+   "fieldtype": "Data",
+   "label": "ESMA Certificate Number"
+  },
+  {
+   "fieldname": "certificate_bname",
+   "fieldtype": "Data",
+   "label": "Certificate Brand Name"
+  },
+  {
+   "fieldname": "certificate_pname_ara",
+   "fieldtype": "Data",
+   "label": "Certificate Product Name Arabic"
+  },
+  {
+   "fieldname": "app_standards",
+   "fieldtype": "Table MultiSelect",
+   "label": "Applicable Standards",
+   "options": "Standards Child"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Text Editor",
+   "label": "Upload QR Code"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "SCHEDULE OF CERTIFICATION",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "SCHEDULE OF CERTIFICATION",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "application",
+   "fieldtype": "Link",
+   "label": "Application",
+   "options": "Application"
+  },
+  {
+   "fieldname": "product_test",
+   "fieldtype": "Table",
+   "label": "Product List",
+   "options": "SCO Test Report"
+  },
+  {
+   "fieldname": "sb2",
+   "fieldtype": "Section Break",
+   "label": "Application Detiails"
+  },
+  {
+   "bold": 1,
+   "fetch_from": "application.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_certificate",
+   "fieldtype": "Section Break",
+   "label": "Certificate Details"
+  },
+  {
+   "fieldname": "sb_qrcode",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sb_no_certifiate",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Message"
+  },
+  {
+   "default": "No Certificate Required",
+   "fieldname": "head",
+   "fieldtype": "Heading",
+   "label": "This Application Has Service Type for Product Category That Does'nt Require Certificate"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fetch_from": "application.service_type",
+   "fieldname": "service_type",
+   "fieldtype": "Data",
+   "label": "Service Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "application.product_category",
+   "fieldname": "product_category",
+   "fieldtype": "Data",
+   "label": "Product Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sb_product",
+   "fieldtype": "Section Break",
+   "label": "SOC Certificates"
+  },
+  {
+   "fieldname": "test_report_child",
+   "fieldtype": "Table MultiSelect",
+   "label": "Test Report",
+   "options": "Product Test Report Child"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_one",
+   "fieldtype": "Check",
+   "label": "Is one Certificate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "click_to",
+   "fieldtype": "Button",
+   "label": "Click To Fetc h Products"
+  },
+  {
+   "fetch_from": "application.address_html",
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2020-07-24 12:55:51.698756",
+ "modified_by": "Administrator",
+ "module": "Nextcertification",
+ "name": "SCHEDULE OF CERTIFICATION",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

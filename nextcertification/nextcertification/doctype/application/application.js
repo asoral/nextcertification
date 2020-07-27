@@ -15,19 +15,22 @@ frappe.ui.form.on('Application', {
                          },
                     get_query_filters: {
                         docstatus: 1,
-                        status: ["not in", ["Closed", "On Hold"]],
-//                        company: frm.doc.company
+                        status: ["not in", ["Closed", "Draft"]],
+                        company: frm.doc.company
                     }
                 })
             }, __("Get items from"));
         };
 
-        if(frm.doc.docstatus === 1){
-	        frm.page.add_inner_button(__("Print"), function() {
-		    frm.print_doc();
-	        });
-        }
-
+//        if(frm.doc.docstatus === 1){
+//	        frm.page.add_inner_button(__("Print SOC "), function() {
+//		    frm.print_doc();
+//	        });
+//	        frm.page.add_inner_button(__("Print COC "), function() {
+//		    frm.print_doc();
+//	        });
+//        };
+        cur_frm.add_fetch("costumer","primary_address","address_html");
 	},
 
         //Evaluation Check List
@@ -91,14 +94,6 @@ frappe.ui.form.on('Application', {
                 }
             })
         }
-
-//    refresh:function(frm){
-//        if(frm.doc.docstatus === 1){
-//	        frm.page.add_inner_button(__("Print"), function() {
-//		    frm.print_doc();
-//	        });
-//        }
-//    }
 
 });
 

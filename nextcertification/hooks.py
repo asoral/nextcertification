@@ -132,7 +132,8 @@ doctype_js = {"Sales Order" : "public/js/sales_order.js"}
 # 	"Task": "nextcertification.task.get_dashboard_data"
 # }
 override_doctype_dashboards = {
-    "Sales Order" :"nextcertification.sales_order_dashboard.get_data"
+    "Sales Order" :"nextcertification.sales_order_dashboard.get_data",
+    "Customer" :"nextcertification.customer_dashboard.get_data"
 }
 # exempt linked doctypes from being automatically cancelled
 #

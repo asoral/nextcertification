@@ -13,6 +13,14 @@ def get_data():
 				'label': _('Selling'),
 				'items': ['Sales Order']
 			},
+			{
+				'label': _('Certificate'),
+				'items': ['SCHEDULE OF CERTIFICATION','CERTIFICATE OF CONFORMITY']
+			},
+			{
+				'label': _('Reports'),
+				'items': ['Product Test Report']
+			},
 
 		]
 	}

@@ -1,12 +1,12 @@
 {
  "actions": [],
- "autoname": "{brand_name}.-.{model_number}.-.##",
- "creation": "2020-07-13 16:14:43.950619",
+ "autoname": "{p_brand_name}.-.{model_number}.-.##",
+ "creation": "2020-07-22 11:37:53.263437",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "brand_name",
+  "p_brand_name",
   "manufacturer",
   "product_test_eport",
   "annual_energy_consumption",
@@ -14,13 +14,11 @@
   "model_number",
   "country_of_origin",
   "applicable_standards",
-  "description",
-  "soc_print",
-  "coc_print"
+  "description"
  ],
  "fields": [
   {
-   "fieldname": "brand_name",
+   "fieldname": "p_brand_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": " Brand Name"
@@ -68,26 +66,14 @@
    "fieldname": "description",
    "fieldtype": "Text",
    "label": "Description"
-  },
-  {
-   "default": "0",
-   "fieldname": "soc_print",
-   "fieldtype": "Check",
-   "label": "SOC "
-  },
-  {
-   "default": "0",
-   "fieldname": "coc_print",
-   "fieldtype": "Check",
-   "label": "COC"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2020-07-22 14:20:56.115468",
+ "modified": "2020-07-22 15:31:37.090326",
  "modified_by": "Administrator",
  "module": "Nextcertification",
- "name": "Product",
+ "name": "Test Report Product Child",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",

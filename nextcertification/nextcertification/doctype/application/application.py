@@ -5,6 +5,7 @@ from frappe.model.document import Document
 from frappe.model.mapper import get_mapped_doc
 from frappe.model.utils import get_fetch_values
 from frappe.contacts.doctype.address.address import get_company_address
+from frappe.contacts.address_and_contact import load_address_and_contact
 
 class Application(Document):
 
@@ -13,6 +14,9 @@ class Application(Document):
 
 	def validate(self):
 		pass
+
+	def onload(self):
+		load_address_and_contact(self)
 
 @frappe.whitelist()
 def make_sales_order(source_name, target_doc=None, ignore_permissions=False):

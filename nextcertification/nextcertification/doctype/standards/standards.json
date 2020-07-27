@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "STD-.#####",
+ "autoname": "field:english_name",
  "creation": "2020-07-13 18:59:54.338042",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -15,7 +15,8 @@
   {
    "fieldname": "english_name",
    "fieldtype": "Data",
-   "label": "English Name"
+   "label": "English Name",
+   "unique": 1
   },
   {
    "fieldname": "arabic_name",
@@ -29,14 +30,14 @@
    "options": "Product Category"
   },
   {
+   "default": "0",
    "fieldname": "is_active",
-   "fieldtype": "Select",
-   "label": "Is Active",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Is Active"
   }
  ],
  "links": [],
- "modified": "2020-07-14 11:29:18.968511",
+ "modified": "2020-07-20 18:46:52.407919",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Standards",

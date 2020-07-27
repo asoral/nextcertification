@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "PSC-.#####",
+ "autoname": "field:english_name",
  "creation": "2020-07-13 18:57:18.868729",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -16,7 +16,8 @@
    "fieldname": "english_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "English Name"
+   "label": "English Name",
+   "unique": 1
   },
   {
    "fieldname": "arabic_name",
@@ -37,7 +38,7 @@
   }
  ],
  "links": [],
- "modified": "2020-07-16 15:41:19.157832",
+ "modified": "2020-07-20 18:47:53.861967",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Product Sub Category",

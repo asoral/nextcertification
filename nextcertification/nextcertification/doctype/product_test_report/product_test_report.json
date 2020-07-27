@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "autoname": "format:{test_report_no}-{application}",
+ "creation": "2020-07-21 15:11:33.130211",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "application",
+  "test_report_no",
+  "start_date",
+  "end_date",
+  "test_report_doc",
+  "cb",
+  "desc",
+  "sb",
+  "products",
+  "amended_from",
+  "sb2",
+  "attachments"
+ ],
+ "fields": [
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "depends_on": "eval:doc.application",
+   "fieldname": "test_report_no",
+   "fieldtype": "Data",
+   "label": "Test Report Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "test_report_doc",
+   "fieldtype": "Attach",
+   "label": "Test Report Document"
+  },
+  {
+   "fieldname": "cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "desc",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "application",
+   "fieldtype": "Link",
+   "label": "Application",
+   "options": "Application",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "sb",
+   "fieldtype": "Section Break",
+   "label": "Products Details"
+  },
+  {
+   "fieldname": "products",
+   "fieldtype": "Table",
+   "label": "Products",
+   "options": "Test Report Product Child"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Product Test Report",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "sb2",
+   "fieldtype": "Section Break",
+   "label": "Allready Uploaded Application Documents By Customer"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Attach",
+   "label": "Attachments"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2020-07-23 15:56:38.813639",
+ "modified_by": "Administrator",
+ "module": "Nextcertification",
+ "name": "Product Test Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

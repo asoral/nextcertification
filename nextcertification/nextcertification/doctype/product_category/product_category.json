@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "PRO-CAT-.#####",
+ "autoname": "field:english_name",
  "creation": "2020-07-13 18:52:14.594446",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -16,7 +16,6 @@
   "column_break_1",
   "arabic_name",
   "max_allowed_prod",
-  "assigned_user",
   "is_orgainc_prod",
   "is_eesl_req",
   "is_active",
@@ -26,7 +25,8 @@
   {
    "fieldname": "english_name",
    "fieldtype": "Data",
-   "label": "English Name"
+   "label": "English Name",
+   "unique": 1
   },
   {
    "fieldname": "section",
@@ -46,22 +46,22 @@
    "options": "Standards"
   },
   {
+   "default": "0",
    "fieldname": "review_req",
-   "fieldtype": "Select",
-   "label": "Review Required",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Review Required"
   },
   {
+   "default": "0",
    "fieldname": "is_halal",
-   "fieldtype": "Select",
-   "label": "Is Halal Product",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Is Halal Product"
   },
   {
+   "default": "0",
    "fieldname": "is_one_certificate",
-   "fieldtype": "Select",
-   "label": "Is One Certificate For All Test Reports?",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Is One Certificate For All Test Reports?"
   },
   {
    "fieldname": "column_break_1",
@@ -78,38 +78,34 @@
    "label": "Max Allowed Products"
   },
   {
-   "fieldname": "assigned_user",
-   "fieldtype": "Link",
-   "label": "Assigned Users",
-   "options": "User"
-  },
-  {
+   "default": "0",
    "fieldname": "is_orgainc_prod",
-   "fieldtype": "Select",
+   "fieldtype": "Check",
+   "in_list_view": 1,
    "label": "Is Organic Product",
-   "options": "\nYes\nNo"
+   "reqd": 1
   },
   {
+   "default": "0",
    "fieldname": "is_eesl_req",
-   "fieldtype": "Select",
-   "label": "Is EESL Required?",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Is EESL Required?"
   },
   {
+   "default": "0",
    "fieldname": "is_active",
-   "fieldtype": "Select",
-   "label": "Is Active",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Is Active"
   },
   {
+   "default": "0",
    "fieldname": "is_audit",
-   "fieldtype": "Select",
-   "label": "Is Audit",
-   "options": "\nYes\nNo"
+   "fieldtype": "Check",
+   "label": "Is Audit"
   }
  ],
  "links": [],
- "modified": "2020-07-14 11:27:15.497324",
+ "modified": "2020-07-20 19:16:58.492115",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Product Category",
@@ -128,7 +124,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "search_fields": "english_name,arabic_name",
  "sort_field": "modified",
  "sort_order": "DESC",

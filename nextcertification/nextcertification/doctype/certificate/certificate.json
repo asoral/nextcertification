@@ -1,0 +1,140 @@
+{
+ "actions": [],
+ "creation": "2020-07-21 14:45:00.257630",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "esma_reference",
+  "certificate_pfacility",
+  "certificate_pname_eng",
+  "test_report",
+  "issue_date",
+  "cb",
+  "esma_certificate_no",
+  "certificate_bname",
+  "certificate_pname_ara",
+  "app_standards",
+  "end_date",
+  "sb",
+  "qr_code",
+  "amended_from",
+  "p_link",
+  "application"
+ ],
+ "fields": [
+  {
+   "fieldname": "esma_reference",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "ESMA Reference"
+  },
+  {
+   "fieldname": "esma_certificate_no",
+   "fieldtype": "Data",
+   "label": "ESMA Certificate Number"
+  },
+  {
+   "fieldname": "test_report",
+   "fieldtype": "Link",
+   "label": "Test Report",
+   "options": "Product Test Report"
+  },
+  {
+   "fieldname": "certificate_pfacility",
+   "fieldtype": "Data",
+   "label": "Certificate Product Facility"
+  },
+  {
+   "fieldname": "certificate_bname",
+   "fieldtype": "Data",
+   "label": "Certificate Brand Name"
+  },
+  {
+   "fieldname": "app_standards",
+   "fieldtype": "Table MultiSelect",
+   "label": "Applicable Standards",
+   "options": "Standards Child"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Text Editor",
+   "label": "Upload QR Code"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Certificate",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "certificate_pname_eng",
+   "fieldtype": "Data",
+   "label": "Certificate Product Name English"
+  },
+  {
+   "fieldname": "cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "certificate_pname_ara",
+   "fieldtype": "Data",
+   "label": "Certificate Product Name Arabic"
+  },
+  {
+   "fieldname": "sb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.application",
+   "fieldname": "p_link",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Product",
+   "options": "Product"
+  },
+  {
+   "fieldname": "application",
+   "fieldtype": "Link",
+   "label": "Application",
+   "options": "Application"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2020-07-22 10:06:55.873974",
+ "modified_by": "Administrator",
+ "module": "Nextcertification",
+ "name": "Certificate",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

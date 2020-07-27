@@ -8,43 +8,28 @@
  "field_order": [
   "naming_series",
   "customer",
-  "date",
-  "column_break",
+  "customer_name",
   "service_type",
+  "address_html",
+  "column_break",
+  "date",
   "section",
   "product_category",
   "sub_category",
   "section_break_conf_eng",
   "section_break_product",
   "product",
-  "section_break_test_report",
-  "test_report_tab",
   "section_break_c_a",
-  "section_break_invoice",
-  "invoice_document",
-  "invoice_total_amount",
-  "send_invoice",
   "section_break_e_cl",
   "checklist_tc",
   "conditions_tc",
+  "column_break_ev",
+  "eval_attachment",
+  "remark",
   "section_break_ap",
   "audit_date",
   "column_break1",
   "audit_doc",
-  "section_break_certificates",
-  "sce_certificate_approval",
-  "esma_reference",
-  "esma_certificate_no",
-  "issue_date",
-  "certificate_pname_english",
-  "test_report",
-  "column_break4",
-  "certificate_pfacility",
-  "certificate_bname",
-  "app_standards",
-  "expiry_date",
-  "certificate_pname_arbic",
-  "qr_code",
   "amended_from",
   "status"
  ],
@@ -54,8 +39,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Customer",
-   "options": "Customer",
-   "reqd": 1
+   "options": "Customer"
   },
   {
    "fieldname": "service_type",
@@ -73,6 +57,7 @@
    "options": "Product Category"
   },
   {
+   "fetch_from": "sections.english_name",
    "fieldname": "section",
    "fieldtype": "Link",
    "label": "Section",
@@ -95,45 +80,13 @@
    "bold": 1,
    "fieldname": "section_break_product",
    "fieldtype": "Section Break",
-   "label": "Product "
-  },
-  {
-   "bold": 1,
-   "fieldname": "section_break_test_report",
-   "fieldtype": "Section Break",
-   "label": "Test Reports"
+   "label": "Product Details and Test Reports"
   },
   {
    "collapsible": 1,
    "fieldname": "section_break_c_a",
    "fieldtype": "Section Break",
    "label": "Corrective Action"
-  },
-  {
-   "bold": 1,
-   "collapsible": 1,
-   "fieldname": "section_break_invoice",
-   "fieldtype": "Section Break",
-   "hidden": 1,
-   "label": "Invoice"
-  },
-  {
-   "description": "You can upload files of types (jpg, jpeg, png, docx, doc, xlsx, xls and pdf) upto 20 MB size.",
-   "fieldname": "invoice_document",
-   "fieldtype": "Attach",
-   "hidden": 1,
-   "label": "Invoice Document"
-  },
-  {
-   "fieldname": "invoice_total_amount",
-   "fieldtype": "Currency",
-   "label": "Invoice Total Amount"
-  },
-  {
-   "fieldname": "send_invoice",
-   "fieldtype": "Button",
-   "hidden": 1,
-   "label": "Send Invoice"
   },
   {
    "bold": 1,
@@ -152,75 +105,6 @@
   {
    "fieldname": "column_break",
    "fieldtype": "Column Break"
-  },
-  {
-   "bold": 1,
-   "collapsible": 1,
-   "fieldname": "section_break_certificates",
-   "fieldtype": "Section Break",
-   "label": "Certificates"
-  },
-  {
-   "fieldname": "sce_certificate_approval",
-   "fieldtype": "Data",
-   "label": "Senior Confirmatory Engineer For Certificate Approval"
-  },
-  {
-   "fieldname": "esma_reference",
-   "fieldtype": "Data",
-   "label": "ESMA Reference"
-  },
-  {
-   "fieldname": "esma_certificate_no",
-   "fieldtype": "Data",
-   "label": "ESMA Certificate Number"
-  },
-  {
-   "fieldname": "test_report",
-   "fieldtype": "Data",
-   "label": "Test Report"
-  },
-  {
-   "fieldname": "certificate_pname_english",
-   "fieldtype": "Data",
-   "label": "Certificate Product Name English"
-  },
-  {
-   "fieldname": "certificate_pname_arbic",
-   "fieldtype": "Data",
-   "label": "Certificate Product Name Arabic"
-  },
-  {
-   "fieldname": "certificate_pfacility",
-   "fieldtype": "Data",
-   "label": "Certificate Product Facility"
-  },
-  {
-   "fieldname": "certificate_bname",
-   "fieldtype": "Data",
-   "label": "Certificate Brand Name"
-  },
-  {
-   "fieldname": "app_standards",
-   "fieldtype": "Link",
-   "label": "Applicable Standards",
-   "options": "Standards"
-  },
-  {
-   "fieldname": "issue_date",
-   "fieldtype": "Date",
-   "label": "Issue Date"
-  },
-  {
-   "fieldname": "expiry_date",
-   "fieldtype": "Date",
-   "label": "Expiry Date"
-  },
-  {
-   "description": "You can upload files of types (jpg, jpeg, png, docx, doc, xlsx, xls and pdf) upto 20 MB size.",
-   "fieldname": "qr_code",
-   "fieldtype": "Attach",
-   "label": "Upload QR Code"
   },
   {
    "bold": 1,
@@ -244,10 +128,6 @@
    "label": "Audit Document"
   },
   {
-   "fieldname": "column_break4",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Naming Series",
@@ -258,13 +138,9 @@
    "set_only_once": 1
   },
   {
-   "fieldname": "test_report_tab",
-   "fieldtype": "Table",
-   "options": "Test Reports"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Amended From",
    "no_copy": 1,
    "options": "Application",
@@ -294,12 +170,43 @@
    "fieldtype": "Select",
    "hidden": 1,
    "label": "Status",
-   "options": "Draft\nTo Verify\nApproved\nRejected"
+   "options": "\nDraft\nTo Verify\nApproved\nRejected"
+  },
+  {
+   "fieldname": "column_break_ev",
+   "fieldtype": "Column Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "eval_attachment",
+   "fieldtype": "Attach",
+   "label": "Checklist Files"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
+  },
+  {
+   "bold": 1,
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Customer Full Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.primary_address",
+   "fieldname": "address_html",
+   "fieldtype": "Text",
+   "label": "Address ",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-07-17 16:47:01.436317",
+ "modified": "2020-07-24 10:49:18.506043",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",

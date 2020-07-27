@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "autoname": "CERT-.####",
+ "creation": "2020-07-20 19:31:53.873791",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "esma_reference",
+  "esma_certificate_no",
+  "test_report",
+  "certificate_prod_ename",
+  "certificate_prod_aname",
+  "cb",
+  "certificate_prod_facility",
+  "certificate_brand_name",
+  "app_standards",
+  "issue_date",
+  "expiry_date",
+  "qr_code"
+ ],
+ "fields": [
+  {
+   "fieldname": "esma_reference",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "ESMA Reference"
+  },
+  {
+   "fieldname": "esma_certificate_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "ESMA Certificate Number"
+  },
+  {
+   "fieldname": "test_report",
+   "fieldtype": "Data",
+   "label": "Test Report"
+  },
+  {
+   "fieldname": "certificate_prod_ename",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Certificate Product Name English"
+  },
+  {
+   "fieldname": "certificate_prod_aname",
+   "fieldtype": "Data",
+   "label": "Certificate Product Name Arabic"
+  },
+  {
+   "fieldname": "cb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "certificate_prod_facility",
+   "fieldtype": "Data",
+   "label": "Certificate Product Facility"
+  },
+  {
+   "fieldname": "app_standards",
+   "fieldtype": "Data",
+   "label": "Applicable Standards"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Attach Image",
+   "label": "Upload QR Code "
+  },
+  {
+   "fieldname": "certificate_brand_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Certificate Brand Name"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2020-07-21 12:04:34.382126",
+ "modified_by": "Administrator",
+ "module": "Nextcertification",
+ "name": "Application Certificate",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

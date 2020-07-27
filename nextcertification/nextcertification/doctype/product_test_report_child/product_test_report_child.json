@@ -1,0 +1,33 @@
+{
+ "actions": [],
+ "autoname": "TRC.-.####",
+ "creation": "2020-07-23 13:12:52.452298",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "test_report_child"
+ ],
+ "fields": [
+  {
+   "fieldname": "test_report_child",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Test Report",
+   "options": "Product Test Report",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2020-07-23 15:53:19.555094",
+ "modified_by": "Administrator",
+ "module": "Nextcertification",
+ "name": "Product Test Report Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
