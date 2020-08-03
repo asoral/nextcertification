@@ -3,17 +3,17 @@
   {
    "hidden": 0,
    "label": "Application",
-   "links": "[   \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Application\",\n        \"label\": \"Application\",\n        \"description\": \"Application\",\n        \"onboard\": 1   \n    },\n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Product Test Report\",\n        \"label\": \"Product Test Report\",\n        \"description\": \"Application Product Test Report\",\n        \"onboard\": 1   \n    },\n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Certificate\",\n        \"label\": \"Certificate\",\n        \"description\": \"Application Certificate\",\n        \"onboard\": 1   \n    }\n]"
-  },
-  {
-   "hidden": 0,
-   "label": "Settings",
-   "links": "[   \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Service Types\",\n        \"label\": \"Service Type\",\n        \"description\": \"Service Type\"\n         \n    },\n    \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Sections\",\n        \"label\": \"Sections\",\n        \"description\": \"Sections\"\n          \n    },\n    \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Product Category\",\n        \"label\": \"Product Category\",\n        \"description\": \"Product Category\"\n         \n    },\n    \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Product Sub Category\",\n        \"label\": \"Product Sub-Category\",\n        \"description\": \"Product Sub-Category\"\n         \n    },\n    \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Standards\",\n        \"label\": \"Standards\",\n        \"description\": \"Standards\"\n       \n    }\n]"
+   "links": "[{\"type\":\"doctype\",\"name\":\"Application\",\"label\":\"Application\",\"description\":\"Application\",\"onboard\":1,\"count\":5,\"doctype\":\"Application\"},\n\n    {\n        \"type\":\"doctype\",\n        \"name\":\"Product Test Report\",\n        \"label\":\"Product Test Report\",\n        \"description\":\"Application Product Test Report\",\n        \"onboard\":1,\"count\":5,\n        \"doctype\":\"Product Test Report\"\n    },\n    {\n        \"type\":\"doctype\",\n        \"name\":\"SCHEDULE OF CERTIFICATION\",\n        \"label\":\"SCHEDULE OF CERTIFICATION\",\n        \"description\":\"Application Certificate\",\n        \"onboard\":1,\"count\":5,\n        \"doctype\":\"SCHEDULE OF CERTIFICATION\"\n    },\n    {\n        \"type\":\"doctype\",\n        \"name\":\"CERTIFICATE OF CONFORMITY\",\n        \"label\":\"CERTIFICATE OF CONFORMITY\",\n        \"description\":\"Application Certificate\",\n        \"onboard\":1,\"count\":5,\n        \"doctype\":\"CERTIFICATE OF CONFORMITY\"\n    }\n\n]"
   },
   {
    "hidden": 0,
    "label": "Reports",
    "links": "[   \n    {  \n        \"type\": \"doctype\",       \n        \"name\": \"Applications\",\n        \"label\": \"Reports\",\n        \"description\": \"Next Certifications reports\"\n        \n    }\n]"
+  },
+  {
+   "hidden": 0,
+   "label": "Settings",
+   "links": "[\n    {\"type\":\"doctype\",\"name\":\"Service Types\",\"label\":\"Service Type\",\"description\":\"Service Type\",\"doctype\":\"Service Types\"},\n    {\"type\":\"doctype\",\"name\":\"Sections\",\"label\":\"Sections\",\"description\":\"Sections\",\"doctype\":\"Sections\"},\n    {\"type\":\"doctype\",\"name\":\"Product Category\",\"label\":\"Product Category\",\"description\":\"Product Category\",\"doctype\":\"Product Category\"},\n    {\"type\":\"doctype\",\"name\":\"Product Sub Category\",\"label\":\"Product Sub-Category\",\"description\":\"Product Sub-Category\",\"doctype\":\"Product Sub Category\"},\n    {\"type\":\"doctype\",\"name\":\"Standards\",\"label\":\"Standards\",\"description\":\"Standards\",\"doctype\":\"Standards\"}\n]"
   }
  ],
  "category": "Modules",
@@ -33,7 +33,7 @@
  "idx": 0,
  "is_standard": 1,
  "label": "Certificate",
- "modified": "2020-07-22 09:51:57.016743",
+ "modified": "2020-08-03 10:18:04.147656",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Certificate",
