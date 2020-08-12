@@ -32,6 +32,7 @@ def make_sales_order(source_name, target_doc=None, ignore_permissions=False):
 		target.run_method("set_po_nos")
 		target.run_method("calculate_taxes_and_totals")
 
+
 		if source.company_address:
 			target.update({'company_address': source.company_address})
 		else:
@@ -51,6 +52,10 @@ def make_sales_order(source_name, target_doc=None, ignore_permissions=False):
 		if source_parent.customer:
 			target.customer = source_parent.customer
 			target.sales_order = source_parent.name
+			target.service_type = source_parent.service_type
+			target.section = source_parent.section
+			target.product_category = source_parent.product_category
+			target.sub_category = source_parent.sub_category
 
 
 	doclist = get_mapped_doc("Sales Order", source_name, {

@@ -13,7 +13,10 @@ app_license = "MIT"
 
 # Includes in <head>
 # ------------------
-doctype_js = {"Sales Order" : "public/js/sales_order.js"}
+doctype_js = {
+    "Sales Order" : "public/js/sales_order.js",
+    "Sales Invoice" : "public/js/sales_invoice.js"
+}
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/nextcertification/css/nextcertification.css"

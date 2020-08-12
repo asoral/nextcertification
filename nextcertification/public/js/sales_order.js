@@ -16,4 +16,45 @@ frappe.ui.form.on("Sales Order", {
             }, __("Create"));
         }
 	},
+
+	"section" : function(frm) {
+            frm.set_query('product_category', function(doc) {
+                return {
+                    filters: {'section': frm.doc.section}
+                };
+            });
+        },
+    "product_category" : function(frm) {
+        frm.set_query('sub_category', function(doc) {
+            return {
+                filters: {'product_category': frm.doc.product_category}
+            };
+        });
+    },
+    "service_type" : function(frm){
+       // console.log('-------- frm status doc ------',frm.doc.docstatus);
+          frappe.call({
+                method: "nextcertification.sales_order.check_registration_req",
+                args: {
+                    doctype: "Service Types",
+                    name: frm.doc.service_type
+                    },
+                callback:function(r) {
+                    if(r.message.registration == 1)
+                    {
+                    frm.set_df_property("registration_no", "hidden", 0);
+                    frm.set_df_property("registration_no", "reqd", 1);
+
+                    frm.refresh_field("registration_no")
+                    }
+                    else
+                    {
+                    frm.set_df_property("registration_no", "hidden", 1);
+                    frm.refresh_field("registration_no")
+                    }
+                }
+            })
+        }
+
+
 });
