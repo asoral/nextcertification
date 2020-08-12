@@ -10,7 +10,9 @@
   "arabic_name",
   "is_audit",
   "is_certificate_req",
-  "is_active"
+  "is_active",
+  "is_registration_req",
+  "amended_from"
  ],
  "fields": [
   {
@@ -42,10 +44,26 @@
    "fieldname": "is_active",
    "fieldtype": "Check",
    "label": "Is Active"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_registration_req",
+   "fieldtype": "Check",
+   "label": "Is Registration No. Required"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Service Types",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
+ "is_submittable": 1,
  "links": [],
- "modified": "2020-07-21 11:41:50.398091",
+ "modified": "2020-08-11 10:51:41.152948",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Service Types",

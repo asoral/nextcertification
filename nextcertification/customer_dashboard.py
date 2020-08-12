@@ -13,7 +13,7 @@ def get_data(data):
 			'Quotation': 'party_name',
 			'Opportunity': 'party_name',
 			'Bank Account': 'party',
-            #'Application': 'customer_fullname'
+
 		},
 		'dynamic_links': {
 			'party_name': ['Customer', 'quotation_to']

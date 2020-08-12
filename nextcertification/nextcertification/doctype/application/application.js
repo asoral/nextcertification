@@ -30,7 +30,13 @@ frappe.ui.form.on('Application', {
 //		    frm.print_doc();
 //	        });
 //        };
+
+            if(frm.doc.sales_order){
+            console.log('******** ',frm.doc.sales_order,' *********')
+            };
+
         cur_frm.add_fetch("costumer","primary_address","address_html");
+
 	},
 
         //Evaluation Check List

@@ -50,6 +50,8 @@ def make_sales_order(source_name, target_doc=None, ignore_permissions=False):
 
 		if source_parent.customer:
 			target.customer = source_parent.customer
+			target.sales_order = source_parent.name
+
 
 	doclist = get_mapped_doc("Sales Order", source_name, {
 		"Sales Order": {

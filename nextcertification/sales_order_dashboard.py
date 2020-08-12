@@ -10,7 +10,7 @@ def get_data(data):
 			'Payment Entry': 'reference_name',
 			'Payment Request': 'reference_name',
 			'Auto Repeat': 'reference_document',
-            'Application':'customer'
+
 		},
 		'internal_links': {
 			'Quotation': ['items', 'prevdoc_docname']

@@ -31,7 +31,8 @@
   "column_break1",
   "audit_doc",
   "amended_from",
-  "status"
+  "status",
+  "sales_order"
  ],
  "fields": [
   {
@@ -202,11 +203,18 @@
    "fieldtype": "Text",
    "label": "Address ",
    "read_only": 1
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Sales Order Id ",
+   "options": "Sales Order"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-07-24 10:49:18.506043",
+ "modified": "2020-08-11 10:37:43.470141",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",
