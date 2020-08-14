@@ -93,6 +93,7 @@ def check_section_certificate(name=None):
 		service = frappe.get_doc("Service Types",name)
 		dic['certificate'] = service.is_certificate_req
 		dic['audit'] = service.is_audit
+		dic['registration'] = service.is_registration_req
 		return dic
 	return False
 

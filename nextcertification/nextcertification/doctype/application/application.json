@@ -9,8 +9,9 @@
   "naming_series",
   "customer",
   "customer_name",
-  "service_type",
   "address_html",
+  "service_type",
+  "registration_no",
   "column_break",
   "date",
   "section",
@@ -198,7 +199,6 @@
    "read_only": 1
   },
   {
-   "fetch_from": "customer.primary_address",
    "fieldname": "address_html",
    "fieldtype": "Text",
    "label": "Address ",
@@ -210,12 +210,19 @@
    "hidden": 1,
    "label": "Sales Order Id ",
    "options": "Sales Order"
+  },
+  {
+   "depends_on": "service_type",
+   "description": "ESMA/SASO Application No.",
+   "fieldname": "registration_no",
+   "fieldtype": "Data",
+   "label": "Registration No"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-08-11 10:37:43.470141",
- "modified_by": "Administrator",
+ "modified": "2020-08-14 12:10:57.900424",
+ "modified_by": "sshaikh@dexciss.com",
  "module": "Nextcertification",
  "name": "Application",
  "owner": "Administrator",

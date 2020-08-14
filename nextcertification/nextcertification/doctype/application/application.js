@@ -97,6 +97,18 @@ frappe.ui.form.on('Application', {
                     frm.set_df_property("section_break_ap", "hidden", 1);
                     frm.refresh_field("section_break_ap")
                     }
+                     if(r.message.registration == 1)
+                    {
+                    frm.set_df_property("registration_no", "hidden", 0);
+                    frm.set_df_property("registration_no", "reqd", 1);
+
+                    frm.refresh_field("registration_no")
+                    }
+                    else
+                    {
+                    frm.set_df_property("registration_no", "hidden", 1);
+                    frm.refresh_field("registration_no")
+                    }
                 }
             })
         }
