@@ -12,6 +12,7 @@ def make_application(doc_name =None):
         application.product_category = doc.product_category
         application.sub_category = doc.sub_category
         application.customer_name = doc.customer_name
+        application.registration_no = doc.registration_no
         application.address_html = doc.address_display
         return application
 
