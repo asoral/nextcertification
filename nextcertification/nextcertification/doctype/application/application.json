@@ -33,7 +33,7 @@
   "audit_doc",
   "amended_from",
   "status",
-  "sales_order"
+  "sales_order_id"
  ],
  "fields": [
   {
@@ -205,24 +205,23 @@
    "read_only": 1
   },
   {
-   "fieldname": "sales_order",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Sales Order Id ",
-   "options": "Sales Order"
-  },
-  {
-   "depends_on": "service_type",
    "description": "ESMA/SASO Application No.",
    "fieldname": "registration_no",
    "fieldtype": "Data",
    "label": "Registration No"
+  },
+  {
+   "fieldname": "sales_order_id",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Sales Order Id ",
+   "options": "Sales Order"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-08-14 12:10:57.900424",
- "modified_by": "sshaikh@dexciss.com",
+ "modified": "2020-08-19 15:59:16.099347",
+ "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",
  "owner": "Administrator",

@@ -1,6 +1,9 @@
 
 frappe.ui.form.on('Application', {
     // Get Item From (sales order) in Application
+    setup: function(frm) {
+		frm.add_fetch("sales_order", "registration_no", "registration_no");
+	},
 	refresh: function(frm) {
 		    if (frm.doc.docstatus === 0 ){
             frm.add_custom_button(__('Sales Order'),function() {

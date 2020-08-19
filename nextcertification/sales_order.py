@@ -11,9 +11,8 @@ def make_application(doc_name =None):
         application.section = doc.section
         application.product_category = doc.product_category
         application.sub_category = doc.sub_category
-        application.customer_name = doc.customer_name
         application.registration_no = doc.registration_no
-        application.address_html = doc.address_display
+        application.sales_order_id = doc.name
         return application
 
 @frappe.whitelist()
@@ -25,3 +24,13 @@ def check_registration_req(name=None):
 		dic['registration'] = service.is_registration_req
 		return dic
 	return False
+
+
+def add_sales_to_application(doc, method):
+    if doc.application:
+        app = frappe.get_doc('Application', doc.application)
+        print("*************",app)
+        if(app):
+            app.sales_order_id = doc.name
+            app.flags.ignore_validate_update_after_submit = True
+            app.save(ignore_permissions=True)

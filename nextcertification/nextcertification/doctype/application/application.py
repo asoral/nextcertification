@@ -97,3 +97,12 @@ def check_section_certificate(name=None):
 		return dic
 	return False
 
+def add_app_to_sales(doc, method):
+    if doc.sales_order_id:
+        app = frappe.get_doc('Sales Order', doc.sales_order_id)
+        print("*************",app)
+        if(app):
+            app.application = doc.name
+            app.flags.ignore_validate_update_after_submit = True
+            app.save(ignore_permissions=True)
+

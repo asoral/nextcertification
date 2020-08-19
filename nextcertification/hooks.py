@@ -142,3 +142,11 @@ override_doctype_dashboards = {
 #
 # auto_cancel_exempted_doctypes = ["Auto Repeat"]
 
+doc_events = {
+    "Sales Order" : {
+        "after_insert" : "nextcertification.sales_order.add_sales_to_application",
+    },
+    "Application" : {
+        "after_insert" : "nextcertification.nextcertification.doctype.application.application.add_app_to_sales",
+    }
+}
