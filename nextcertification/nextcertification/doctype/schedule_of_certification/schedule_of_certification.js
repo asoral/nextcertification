@@ -121,7 +121,6 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
 
   "click_to": function(frm, cdt, cdn) {
         if(frm.doc.is_one == 1 ) {
-            console.log('********** is one one if',frm.doc.is_one)
                frm.doc.product = []
                   frappe.call({
                      method: "frappe.client.get",
@@ -131,7 +130,6 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
                      },
                      callback(r) {
                         if (r.message) {
-                        console.log('********** is one one if r msg  00000000',frm.doc.is_one)
                            for (var row in r.message.product) {
                                 var child = frm.add_child("product_test");
                                 frappe.model.set_value(child.doctype, child.name, "brand_name", r.message.product[row].brand_name);

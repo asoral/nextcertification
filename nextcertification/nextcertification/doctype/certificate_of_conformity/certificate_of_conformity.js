@@ -10,15 +10,14 @@ frappe.ui.form.on('CERTIFICATE OF CONFORMITY', {
     },
 	"application" : function(frm){
        // console.log('-------- frm status doc ------',frm.doc.docstatus);
-        frm.set_query('test_report', function(doc){
-            return {
-                filters: {
+        frm.set_query('test_report_child', function(doc){
+                return {
+                    filters: {
                     'application':frm.doc.application,
-                    'docstatus': 1
-                }
-
-            };
-        });
+                     'docstatus': 1
+                    }
+                };
+            });
 
           frappe.call({
                 method: "nextcertification.nextcertification.doctype.certificate_of_conformity.certificate_of_conformity.check_section_certificate",
