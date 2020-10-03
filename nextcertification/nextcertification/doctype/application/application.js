@@ -1,6 +1,15 @@
 
 frappe.ui.form.on('Application', {
     // Get Item From (sales order) in Application
+    onload: function(frm) {
+
+        cur_frm.page.menu.find("a:contains("+__("Email")+")").on('click', function() {
+           setTimeout(() => {
+               $('*[data-fieldname="subject"]').val("Test subject")
+           },500);
+        });
+    },
+
     setup: function(frm) {
 		frm.add_fetch("sales_order", "registration_no", "registration_no");
 	},

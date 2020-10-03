@@ -14,6 +14,7 @@
   "registration_no",
   "column_break",
   "date",
+  "application_type",
   "section",
   "product_category",
   "sub_category",
@@ -216,11 +217,17 @@
    "hidden": 1,
    "label": "Sales Order Id ",
    "options": "Sales Order"
+  },
+  {
+   "fieldname": "application_type",
+   "fieldtype": "Select",
+   "label": "Application Type",
+   "options": "\nECAS\nEQM\nSABER\nSQM\nSASO IECEE\nHALAL\nESMA G-Mark\nSASO G Mark"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-08-19 15:59:16.099347",
+ "modified": "2020-10-03 16:32:05.071366",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",

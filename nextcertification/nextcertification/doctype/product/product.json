@@ -10,6 +10,7 @@
   "manufacturer",
   "product_test_eport",
   "annual_energy_consumption",
+  "rating",
   "column_break",
   "model_number",
   "country_of_origin",
@@ -80,11 +81,16 @@
    "fieldname": "coc_print",
    "fieldtype": "Check",
    "label": "COC"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2020-07-22 14:20:56.115468",
+ "modified": "2020-10-03 14:14:54.527550",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Product",

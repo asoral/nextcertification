@@ -5,6 +5,8 @@
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
+from frappe.model.mapper import get_mapped_doc
+
 
 class SCHEDULEOFCERTIFICATION(Document):
 	def get_options(self, arg=None):
@@ -59,3 +61,9 @@ def check_is_for_all_report(name=None):
 		dic['certificate'] = service.is_one_certificate
 		return dic
 	return False
+
+@frappe.whitelist()
+def fetch_product(application):
+	products = frappe.db.sql(""" select brand_name, model_number, description from `tabProduct` where parent= %(parent)s """,
+				  {'parent':application},as_dict=1)
+	return products

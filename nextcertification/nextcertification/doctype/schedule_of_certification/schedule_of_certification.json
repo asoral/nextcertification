@@ -29,12 +29,12 @@
   "end_date",
   "sb_qrcode",
   "qr_code",
-  "amended_from",
   "sb_product",
   "click_to",
   "product_test",
   "sb_no_certifiate",
-  "head"
+  "head",
+  "amended_from"
  ],
  "fields": [
   {
@@ -207,9 +207,10 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.application",
    "fieldname": "click_to",
    "fieldtype": "Button",
-   "label": "Click To Fetc h Products"
+   "label": "Click To Fetch Products"
   },
   {
    "fetch_from": "application.address_html",
@@ -221,7 +222,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-07-24 12:55:51.698756",
+ "modified": "2020-10-03 15:21:04.665389",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "SCHEDULE OF CERTIFICATION",

@@ -119,25 +119,27 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
      })
   },
 
-  "click_to": function(frm, cdt, cdn) {
-        if(frm.doc.is_one == 1 ) {
+  click_to: function(frm, cdt, cdn) {
+        if(frm.doc.docstatus != 1) {
                frm.doc.product = []
                   frappe.call({
-                     method: "frappe.client.get",
+                     method: "nextcertification.nextcertification.doctype.schedule_of_certification.schedule_of_certification.fetch_product",
                      args: {
-                        name: frm.doc.application,
-                        doctype: "Application"
+                        application: frm.doc.application,
                      },
                      callback(r) {
                         if (r.message) {
-                           for (var row in r.message.product) {
-                                var child = frm.add_child("product_test");
-                                frappe.model.set_value(child.doctype, child.name, "brand_name", r.message.product[row].brand_name);
-                                frappe.model.set_value(child.doctype, child.name, "model_no", r.message.product[row].model_number);
-                                frappe.model.set_value(child.doctype, child.name, "country", r.message.product[row].country_of_origin);
-                                frappe.model.set_value(child.doctype, child.name, "description", r.message.product[row].description);
-                                frm.refresh_field("product_test");
-                           }
+                        console.log("product",r.message);
+                        var array = r.message;
+                        var array_len = array.length;
+                        for (var i=0; i< array_len; i++){
+                            console.log("array",array[i]['brand_name']);
+                            var child = frm.add_child("product_test");
+                            child.brand_name = array[i]['brand_name'];
+                            child.model_no = array[i]['model_number'];
+                            child.description = array[i]['description'];
+                        }
+                        frm.refresh_fields();
                         }
                      }
                   })
