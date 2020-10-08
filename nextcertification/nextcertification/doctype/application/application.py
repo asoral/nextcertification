@@ -1,13 +1,28 @@
 
 from __future__ import unicode_literals
 import frappe
+from frappe import _
 from frappe.model.document import Document
 from frappe.model.mapper import get_mapped_doc
 from frappe.model.utils import get_fetch_values
 from frappe.contacts.doctype.address.address import get_company_address
 from frappe.contacts.address_and_contact import load_address_and_contact
+from frappe.website.website_generator import WebsiteGenerator
+STANDARD_USERS = ("Guest", "Administrator","All")
+class Application(WebsiteGenerator):
 
-class Application(Document):
+
+	def get_list_context(self, context):
+		# context.introduction = _('EOI')
+		context.no_cache = 1
+		context.show_sidebar = True
+		context.get_list = frappe.get_doc(frappe.form_dict.doctype, frappe.form_dict.name)
+		context.title = _("Tender")
+		context.get_list.update({
+			'show_sidebar': False,
+			'show_search': True,
+			'title': _('Application')
+		})
 
 	def get_options(self, arg=None):
 		pass
@@ -17,6 +32,15 @@ class Application(Document):
 
 	def onload(self):
 		load_address_and_contact(self)
+
+def get_list_context(context=None):
+	return {
+		"title": _("Application"),
+		"show_sidebar": False,
+		"show_search": True,
+		'no_breadcrumbs': True
+
+	}
 
 @frappe.whitelist()
 def make_sales_order(source_name, target_doc=None, ignore_permissions=False):
@@ -100,7 +124,6 @@ def check_section_certificate(name=None):
 def add_app_to_sales(doc, method):
     if doc.sales_order_id:
         app = frappe.get_doc('Sales Order', doc.sales_order_id)
-        print("*************",app)
         if(app):
             app.application = doc.name
             app.flags.ignore_validate_update_after_submit = True

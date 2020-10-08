@@ -34,7 +34,9 @@
   "audit_doc",
   "amended_from",
   "status",
-  "sales_order_id"
+  "sales_order_id",
+  "documents_section",
+  "add_documents"
  ],
  "fields": [
   {
@@ -164,6 +166,7 @@
    "options": "Terms and Conditions"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "conditions_tc",
    "fieldtype": "Text Editor",
    "label": "Conditions"
@@ -223,11 +226,23 @@
    "fieldtype": "Select",
    "label": "Application Type",
    "options": "\nECAS\nEQM\nSABER\nSQM\nSASO IECEE\nHALAL\nESMA G-Mark\nSASO G Mark"
+  },
+  {
+   "fieldname": "documents_section",
+   "fieldtype": "Section Break",
+   "label": "Documents"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "add_documents",
+   "fieldtype": "Table",
+   "label": "Add Documents",
+   "options": "Application Documents"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-10-03 16:32:05.071366",
+ "modified": "2020-10-08 10:06:46.442187",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",
@@ -244,8 +259,21 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1,
+   "write": 1
   }
  ],
+ "route": "certificate-application",
  "search_fields": "customer,product_category,service_type,section",
  "sort_field": "modified",
  "sort_order": "DESC",
