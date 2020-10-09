@@ -40,11 +40,15 @@
  ],
  "fields": [
   {
+   "bold": 1,
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_global_search": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "search_index": 1
   },
   {
    "fieldname": "service_type",
@@ -138,9 +142,7 @@
    "label": "Naming Series",
    "no_copy": 1,
    "options": "PRD-.YYYY.-",
-   "print_hide": 1,
-   "reqd": 1,
-   "set_only_once": 1
+   "reqd": 1
   },
   {
    "fieldname": "amended_from",
@@ -194,11 +196,9 @@
    "label": "Remark"
   },
   {
-   "bold": 1,
    "fetch_from": "customer.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
-   "in_global_search": 1,
    "label": "Customer Full Name",
    "read_only": 1
   },
@@ -242,7 +242,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-10-08 10:06:46.442187",
+ "modified": "2020-10-09 17:42:12.932438",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",
@@ -258,6 +258,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {
@@ -268,8 +269,22 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Guest",
+   "role": "Administrator",
    "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
@@ -277,6 +292,5 @@
  "search_fields": "customer,product_category,service_type,section",
  "sort_field": "modified",
  "sort_order": "DESC",
- "title_field": "customer",
  "track_changes": 1
 }

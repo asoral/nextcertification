@@ -76,7 +76,7 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
                     frm.refresh_field("test_report")
                     frm.set_df_property("test_report_child", "hidden", 0);
                     frm.refresh_field("test_report_child")
-                    frm.set_df_property("click_to", "hidden", 0);
+//                    frm.set_df_property("click_to", "hidden", 0);
                     frm.refresh_field("click_to")
                     frm.set_value("is_one",1)
                     frm.refresh_field("is_one")
@@ -87,7 +87,7 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
                     frm.refresh_field("test_report")
                     frm.set_df_property("test_report_child", "hidden", 1);
                     frm.refresh_field("test_report_child")
-                    frm.set_df_property("click_to", "hidden", 1);
+//                    frm.set_df_property("click_to", "hidden", 1);
                     frm.refresh_field("click_to")
                     frm.set_value("is_one",0)
                     frm.refresh_field("is_one")
@@ -138,6 +138,7 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
                             child.brand_name = array[i]['brand_name'];
                             child.model_no = array[i]['model_number'];
                             child.description = array[i]['description'];
+                            child.country = array[i]["country_of_origin"];
                         }
                         frm.refresh_fields();
                         }

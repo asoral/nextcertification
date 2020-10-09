@@ -18,7 +18,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2020-10-08 17:50:57.803608",
+ "modified": "2020-10-09 17:43:58.519182",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "certificate-application",
@@ -29,8 +29,16 @@
  "route_to_success_link": 0,
  "show_attachments": 0,
  "show_in_grid": 0,
- "show_sidebar": 0,
- "sidebar_items": [],
+ "show_sidebar": 1,
+ "sidebar_items": [
+  {
+   "enabled": 1,
+   "reference_doctype": "Application",
+   "role": "Administrator",
+   "route": "certificate-application",
+   "title": " Certificate Application"
+  }
+ ],
  "success_url": "",
  "title": "Certificate Application",
  "web_form_fields": [

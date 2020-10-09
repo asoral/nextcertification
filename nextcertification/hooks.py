@@ -150,3 +150,7 @@ doc_events = {
         "after_insert" : "nextcertification.nextcertification.doctype.application.application.add_app_to_sales",
     }
 }
+
+standard_portal_menu_items = [
+	{"title": "Certificate Application", "route": "/certificate-application", "reference_doctype": "Application", "role": "ALL"},
+]

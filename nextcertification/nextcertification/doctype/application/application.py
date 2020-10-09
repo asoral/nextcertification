@@ -17,9 +17,9 @@ class Application(WebsiteGenerator):
 		context.no_cache = 1
 		context.show_sidebar = True
 		context.get_list = frappe.get_doc(frappe.form_dict.doctype, frappe.form_dict.name)
-		context.title = _("Tender")
+		context.title = _("Application")
 		context.get_list.update({
-			'show_sidebar': False,
+			'show_sidebar': True,
 			'show_search': True,
 			'title': _('Application')
 		})
@@ -36,7 +36,7 @@ class Application(WebsiteGenerator):
 def get_list_context(context=None):
 	return {
 		"title": _("Application"),
-		"show_sidebar": False,
+		"show_sidebar": True,
 		"show_search": True,
 		'no_breadcrumbs': True
 
