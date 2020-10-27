@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "format:{test_report_no}-{application}",
+ "autoname": "field:test_report_no",
  "creation": "2020-07-21 15:11:33.130211",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -31,10 +31,11 @@
    "label": "End Date"
   },
   {
-   "depends_on": "eval:doc.application",
    "fieldname": "test_report_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Test Report Number",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -93,7 +94,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-07-23 15:56:38.813639",
+ "modified": "2020-10-26 12:45:11.908344",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Product Test Report",

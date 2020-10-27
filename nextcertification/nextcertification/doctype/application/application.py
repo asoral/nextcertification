@@ -8,21 +8,9 @@ from frappe.model.utils import get_fetch_values
 from frappe.contacts.doctype.address.address import get_company_address
 from frappe.contacts.address_and_contact import load_address_and_contact
 from frappe.website.website_generator import WebsiteGenerator
+from frappe.utils.user import is_website_user
 STANDARD_USERS = ("Guest", "Administrator","All")
 class Application(WebsiteGenerator):
-
-
-	def get_list_context(self, context):
-		# context.introduction = _('EOI')
-		context.no_cache = 1
-		context.show_sidebar = True
-		context.get_list = frappe.get_doc(frappe.form_dict.doctype, frappe.form_dict.name)
-		context.title = _("Application")
-		context.get_list.update({
-			'show_sidebar': True,
-			'show_search': True,
-			'title': _('Application')
-		})
 
 	def get_options(self, arg=None):
 		pass
@@ -33,14 +21,129 @@ class Application(WebsiteGenerator):
 	def onload(self):
 		load_address_and_contact(self)
 
+	def create_prod_rep(self):
+		for i in self.product_test_reports:
+			if i.description and i.attach_document:
+				if not frappe.db.exists("Product Test Report", i.description):
+					pro_test = frappe.new_doc("Product Test Report")
+					pro_test.application = self.name
+					pro_test.test_report_no = i.description
+					pro_test.save(ignore_permissions = True)
+		for j in self.product:
+			if j.product_test_eport or j.product_test_report_2 or j.product_test_report_3 and j.updated == 0:
+				if j.product_test_eport:
+					pro_test1 = frappe.get_doc("Product Test Report",j.product_test_eport)
+					pro_test1.append('products', {
+						"p_brand_name": j.brand_name,
+						"manufacturer": j.manufacturer,
+						"product_test_eport": j.product_test_eport,
+						"annual_energy_consumption": j.annual_energy_consumption,
+						"model_number" : j.model_number,
+						"country_of_origin": j.country_of_origin,
+						"description": j.description,
+						"applicable_standards_1": j.applicable_standards_1,"applicable_standards_2": j.applicable_standards_2,
+						"applicable_standards_3": j.applicable_standards_3,"applicable_standards_4": j.applicable_standards_4,
+						"applicable_standards_5": j.applicable_standards_5,"applicable_standards_6": j.applicable_standards_6,
+						"applicable_standards_7": j.applicable_standards_7,"applicable_standards_8": j.applicable_standards_8,
+						"applicable_standards_9": j.applicable_standards_9,"applicable_standards_10": j.applicable_standards_10,
+						"applicable_standards_11": j.applicable_standards_11,"applicable_standards_12": j.applicable_standards_12,
+						"applicable_standards_13": j.applicable_standards_13,"applicable_standards_14": j.applicable_standards_14,
+						"applicable_standards_15": j.applicable_standards_15,"applicable_standards_16": j.applicable_standards_16,
+						"applicable_standards_17": j.applicable_standards_17,"applicable_standards_18": j.applicable_standards_18,
+						"applicable_standards_19": j.applicable_standards_19,"applicable_standards_20": j.applicable_standards_20,
+						"applicable_standards_21": j.applicable_standards_21,"applicable_standards_22": j.applicable_standards_22,
+						"applicable_standards_23": j.applicable_standards_23,"applicable_standards_24": j.applicable_standards_24,
+						"applicable_standards_25": j.applicable_standards_25,"applicable_standards_26": j.applicable_standards_26,
+						"applicable_standards_27": j.applicable_standards_27,"applicable_standards_28": j.applicable_standards_28,
+						"applicable_standards_29": j.applicable_standards_29,"applicable_standards_30": j.applicable_standards_30,
+						"applicable_standards_31": j.applicable_standards_31,"applicable_standards_32": j.applicable_standards_32,
+						"applicable_standards_33": j.applicable_standards_33,"applicable_standards_34": j.applicable_standards_34,
+						"applicable_standards_35": j.applicable_standards_35,"applicable_standards_36": j.applicable_standards_36,
+						"applicable_standards_37": j.applicable_standards_37,"applicable_standards_38": j.applicable_standards_38,
+						"applicable_standards_39": j.applicable_standards_39,"applicable_standards_40": j.applicable_standards_40,
+						"applicable_standards_41": j.applicable_standards_41,"applicable_standards_42": j.applicable_standards_42,
+						"applicable_standards_43": j.applicable_standards_43,"applicable_standards_44": j.applicable_standards_44,
+						"applicable_standards_45": j.applicable_standards_45,"applicable_standards_46": j.applicable_standards_46,
+						"applicable_standards_47": j.applicable_standards_47,"applicable_standards_48": j.applicable_standards_48,
+						"applicable_standards_49": j.applicable_standards_49,"applicable_standards_50": j.applicable_standards_50,
+
+					})
+
+					pro_test1.save(ignore_permissions = True)
+
+				if j.product_test_report_2:
+					pro_test2 = frappe.get_doc("Product Test Report", j.product_test_report_2)
+					pro_test2.append('products', {
+						"p_brand_name": j.brand_name,
+						"manufacturer": j.manufacturer,
+						"product_test_eport": j.product_test_eport,
+						"annual_energy_consumption": j.annual_energy_consumption,
+						"model_number": j.model_number,
+						"country_of_origin": j.country_of_origin,
+						"applicable_standards": j.applicable_standards_1,
+						"description": j.description
+					})
+					pro_test2.save(ignore_permissions=True)
+				if j.product_test_report_2:
+					pro_test3 = frappe.get_doc("Product Test Report", j.product_test_report_2)
+					pro_test3.append('products', {
+						"p_brand_name": j.brand_name,
+						"manufacturer": j.manufacturer,
+						"product_test_eport": j.product_test_eport,
+						"annual_energy_consumption": j.annual_energy_consumption,
+						"model_number": j.model_number,
+						"country_of_origin": j.country_of_origin,
+						"applicable_standards": j.applicable_standards_1,
+						"description": j.description
+					})
+					pro_test3.save(ignore_permissions=True)
+				frappe.db.sql(""" update `tabProduct` set updated = 1 where name = %(name)s """,{'name':j.name})
+				frappe.db.commit()
+		self.reload()
+
+
+
+
 def get_list_context(context=None):
 	return {
 		"title": _("Application"),
+		"get_list": get_issue_list,
 		"show_sidebar": True,
 		"show_search": True,
 		'no_breadcrumbs': True
 
 	}
+def get_issue_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by=None):
+	from frappe.www.list import get_list
+
+	user = frappe.session.user
+	contact = frappe.db.get_value("Contact", {"user": user}, "name")
+	customer = frappe.db.get_value("Customer", {"email_id": user}, "name")
+
+	# if contact:
+	# 	contact_doc = frappe.get_doc("Contact", contact)
+	# 	customer = contact_doc.get_link_for("Customer")
+	# if customer:
+
+
+	ignore_permissions = False
+	if is_website_user():
+		if not filters: filters = {}
+
+		if customer:
+			filters["customer"] = customer
+		else:
+			filters["mail_id"] = user
+
+		ignore_permissions = True
+
+	return get_list(doctype, txt, filters, limit_start, limit_page_length, ignore_permissions=ignore_permissions)
+
+def has_website_permission(doc, ptype, user, verbose=False):
+	from erpnext.controllers.website_list_for_contact import has_website_permission
+	permission_based_on_customer = has_website_permission(doc, ptype, user, verbose)
+
+	return permission_based_on_customer or doc.mail_id==user
 
 @frappe.whitelist()
 def make_sales_order(source_name, target_doc=None, ignore_permissions=False):
@@ -129,3 +232,15 @@ def add_app_to_sales(doc, method):
             app.flags.ignore_validate_update_after_submit = True
             app.save(ignore_permissions=True)
 
+@frappe.whitelist()
+def prod_cat_eesl(product_category):
+	pc = frappe.get_doc("Product Category", product_category)
+	if pc.is_eesl_req == 1:
+		return 1
+
+@frappe.whitelist()
+def update_test_report_name(name):
+	print("****************************************************************")
+	frappe.db.sql(""" update `tabCustomer Product Test Report` set description = %(name)s where name = %(name)s 
+	 """,{'name':name})
+	frappe.db.commit()

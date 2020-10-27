@@ -63,7 +63,8 @@ def check_is_for_all_report(name=None):
 	return False
 
 @frappe.whitelist()
-def fetch_product(application):
-	products = frappe.db.sql(""" select brand_name, model_number, description, country_of_origin from `tabProduct` where parent= %(parent)s """,
-				  {'parent':application},as_dict=1)
+def fetch_product(application, test_report):
+	products = frappe.db.sql(""" select brand_name, model_number, description, country_of_origin from `tabProduct` where parent= %(parent)s 
+				and product_test_eport = %(tp)s or product_test_report_2 = %(tp)s or product_test_report_3 = %(tp)s""",
+				  {'parent':application,'tp':test_report},as_dict=1)
 	return products

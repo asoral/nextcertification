@@ -14,7 +14,59 @@
   "model_number",
   "country_of_origin",
   "applicable_standards",
-  "description"
+  "description",
+  "section_break_10",
+  "applicable_standards1",
+  "applicable_standards3",
+  "applicable_standards5",
+  "applicable_standards7",
+  "applicable_standards9",
+  "applicable_standards11",
+  "applicable_standards13",
+  "applicable_standards15",
+  "applicable_standards17",
+  "applicable_standards19",
+  "applicable_standards21",
+  "applicable_standards23",
+  "applicable_standards25",
+  "applicable_standards27",
+  "applicable_standards29",
+  "applicable_standards31",
+  "applicable_standards33",
+  "applicable_standards35",
+  "applicable_standards37",
+  "applicable_standards39",
+  "applicable_standards41",
+  "applicable_standards43",
+  "applicable_standards45",
+  "applicable_standards47",
+  "applicable_standards49",
+  "column_break_36",
+  "applicable_standards2",
+  "applicable_standards4",
+  "applicable_standards6",
+  "applicable_standards8",
+  "applicable_standards10",
+  "applicable_standards12",
+  "applicable_standards14",
+  "applicable_standards16",
+  "applicable_standards18",
+  "applicable_standards20",
+  "applicable_standards22",
+  "applicable_standards24",
+  "applicable_standards26",
+  "applicable_standards28",
+  "applicable_standards30",
+  "applicable_standards32",
+  "applicable_standards34",
+  "applicable_standards36",
+  "applicable_standards38",
+  "applicable_standards40",
+  "applicable_standards42",
+  "applicable_standards44",
+  "applicable_standards46",
+  "applicable_standards48",
+  "applicable_standards50"
  ],
  "fields": [
   {
@@ -52,9 +104,8 @@
   },
   {
    "fieldname": "country_of_origin",
-   "fieldtype": "Link",
-   "label": "Country of Origin",
-   "options": "Country"
+   "fieldtype": "Data",
+   "label": "Country of Origin"
   },
   {
    "fieldname": "applicable_standards",
@@ -66,11 +117,319 @@
    "fieldname": "description",
    "fieldtype": "Text",
    "label": "Description"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "applicable_standards1",
+   "fieldtype": "Link",
+   "label": "Applicable Standards1",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards3",
+   "fieldtype": "Link",
+   "label": "Applicable Standards3",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards5",
+   "fieldtype": "Link",
+   "label": "Applicable Standards5",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards7",
+   "fieldtype": "Link",
+   "label": "Applicable Standards7",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards9",
+   "fieldtype": "Link",
+   "label": "Applicable Standards9",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards11",
+   "fieldtype": "Link",
+   "label": "Applicable Standards11",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards13",
+   "fieldtype": "Link",
+   "label": "Applicable Standards13",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards15",
+   "fieldtype": "Link",
+   "label": "Applicable Standards15",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards17",
+   "fieldtype": "Link",
+   "label": "Applicable Standards17",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards19",
+   "fieldtype": "Link",
+   "label": "Applicable Standards19",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards21",
+   "fieldtype": "Link",
+   "label": "Applicable Standards21",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards23",
+   "fieldtype": "Link",
+   "label": "Applicable Standards23",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards25",
+   "fieldtype": "Link",
+   "label": "Applicable Standards25",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards27",
+   "fieldtype": "Link",
+   "label": "Applicable Standards27",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards29",
+   "fieldtype": "Link",
+   "label": "Applicable Standards29",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards31",
+   "fieldtype": "Link",
+   "label": "Applicable Standards31",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards33",
+   "fieldtype": "Link",
+   "label": "Applicable Standards33",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards35",
+   "fieldtype": "Link",
+   "label": "Applicable Standards35",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards37",
+   "fieldtype": "Link",
+   "label": "Applicable Standards37",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards39",
+   "fieldtype": "Link",
+   "label": "Applicable Standards39",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards41",
+   "fieldtype": "Link",
+   "label": "Applicable Standards41",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards43",
+   "fieldtype": "Link",
+   "label": "Applicable Standards43",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards45",
+   "fieldtype": "Link",
+   "label": "Applicable Standards45",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards47",
+   "fieldtype": "Link",
+   "label": "Applicable Standards47",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards49",
+   "fieldtype": "Link",
+   "label": "Applicable Standards49",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "applicable_standards2",
+   "fieldtype": "Link",
+   "label": "Applicable Standards2",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards4",
+   "fieldtype": "Link",
+   "label": "Applicable Standards4",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards6",
+   "fieldtype": "Link",
+   "label": "Applicable Standards6",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards8",
+   "fieldtype": "Link",
+   "label": "Applicable Standards8",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards10",
+   "fieldtype": "Link",
+   "label": "Applicable Standards10",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards12",
+   "fieldtype": "Link",
+   "label": "Applicable Standards12",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards14",
+   "fieldtype": "Link",
+   "label": "Applicable Standards14",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards16",
+   "fieldtype": "Link",
+   "label": "Applicable Standards16",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards18",
+   "fieldtype": "Link",
+   "label": "Applicable Standards18",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards20",
+   "fieldtype": "Link",
+   "label": "Applicable Standards20",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards22",
+   "fieldtype": "Link",
+   "label": "Applicable Standards22",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards24",
+   "fieldtype": "Link",
+   "label": "Applicable Standards24",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards26",
+   "fieldtype": "Link",
+   "label": "Applicable Standards26",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards28",
+   "fieldtype": "Link",
+   "label": "Applicable Standards28",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards30",
+   "fieldtype": "Link",
+   "label": "Applicable Standards30",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards32",
+   "fieldtype": "Link",
+   "label": "Applicable Standards32",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards34",
+   "fieldtype": "Link",
+   "label": "Applicable Standards34",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards36",
+   "fieldtype": "Link",
+   "label": "Applicable Standards36",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards38",
+   "fieldtype": "Link",
+   "label": "Applicable Standards38",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards40",
+   "fieldtype": "Link",
+   "label": "Applicable Standards40",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards42",
+   "fieldtype": "Link",
+   "label": "Applicable Standards42",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards44",
+   "fieldtype": "Link",
+   "label": "Applicable Standards44",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards46",
+   "fieldtype": "Link",
+   "label": "Applicable Standards46",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards48",
+   "fieldtype": "Link",
+   "label": "Applicable Standards48",
+   "options": "Standards"
+  },
+  {
+   "fieldname": "applicable_standards50",
+   "fieldtype": "Link",
+   "label": "Applicable Standards50",
+   "options": "Standards"
   }
  ],
  "istable": 1,
  "links": [],
- "modified": "2020-07-22 15:31:37.090326",
+ "modified": "2020-10-26 17:53:02.440429",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Test Report Product Child",

@@ -154,3 +154,7 @@ doc_events = {
 standard_portal_menu_items = [
 	{"title": "Certificate Application", "route": "/certificate-application", "reference_doctype": "Application", "role": "ALL"},
 ]
+
+has_website_permission = {
+	"Application": "nextcertification.nextcertification.doctype.application.application.has_website_permission"
+}

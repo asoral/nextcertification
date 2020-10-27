@@ -3,6 +3,17 @@
 
 frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
 
+    onload: function(frm){
+         frm.set_query('test_report', function(frm){
+                return {
+                    filters: {
+                    'application':frm.doc.application,
+                    }
+
+                };
+            });
+    },
+
     refresh: function(frm) {
         if( frm.doc.docstatus === 1){
             frm.set_df_property("application", "readonly", 1),
@@ -15,8 +26,7 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
             frm.set_query('test_report', function(doc){
                 return {
                     filters: {
-                    'application':frm.doc.application,
-                     'docstatus': 1
+                    'application':frm.doc.application
                     }
 
                 };
@@ -96,28 +106,28 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
             });
       },
 
-  "test_report":  function(frm, cdt, cdn) {
-     frm.doc.product = []
-     frappe.call({
-        method: "frappe.client.get",
-        args: {
-            name: frm.doc.test_report,
-            doctype: "Product Test Report"
-        },
-        callback(r) {
-            if (r.message) {
-                for (var row in r.message.products) {
-                    var child = frm.add_child("product_test");
-                    frappe.model.set_value(child.doctype, child.name, "brand_name", r.message.products[row].p_brand_name);
-                    frappe.model.set_value(child.doctype, child.name, "model_no", r.message.products[row].model_number);
-                    frappe.model.set_value(child.doctype, child.name, "country", r.message.products[row].country_of_origin);
-                    frappe.model.set_value(child.doctype, child.name, "description", r.message.products[row].description);
-                    frm.refresh_field("product_test");
-                }
-            }
-        }
-     })
-  },
+//  "test_report":  function(frm, cdt, cdn) {
+//     frm.doc.product = []
+//     frappe.call({
+//        method: "frappe.client.get",
+//        args: {
+//            name: frm.doc.test_report,
+//            doctype: "Product Test Report"
+//        },
+//        callback(r) {
+//            if (r.message) {
+//                for (var row in r.message.products) {
+//                    var child = frm.add_child("product_test");
+//                    frappe.model.set_value(child.doctype, child.name, "brand_name", r.message.products[row].p_brand_name);
+//                    frappe.model.set_value(child.doctype, child.name, "model_no", r.message.products[row].model_number);
+//                    frappe.model.set_value(child.doctype, child.name, "country", r.message.products[row].country_of_origin);
+//                    frappe.model.set_value(child.doctype, child.name, "description", r.message.products[row].description);
+//                    frm.refresh_field("product_test");
+//                }
+//            }
+//        }
+//     })
+//  },
 
   click_to: function(frm, cdt, cdn) {
         if(frm.doc.docstatus != 1) {
@@ -126,6 +136,7 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
                      method: "nextcertification.nextcertification.doctype.schedule_of_certification.schedule_of_certification.fetch_product",
                      args: {
                         application: frm.doc.application,
+                        test_report: frm.doc.test_report
                      },
                      callback(r) {
                         if (r.message) {

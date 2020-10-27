@@ -9,6 +9,7 @@
   "naming_series",
   "customer",
   "customer_name",
+  "mail_id",
   "address_html",
   "service_type",
   "registration_no",
@@ -18,6 +19,7 @@
   "section",
   "product_category",
   "sub_category",
+  "is_eesl_req",
   "section_break_conf_eng",
   "section_break_product",
   "product",
@@ -36,7 +38,9 @@
   "status",
   "sales_order_id",
   "documents_section",
-  "add_documents"
+  "add_documents",
+  "product_test_report_section",
+  "product_test_reports"
  ],
  "fields": [
   {
@@ -238,11 +242,35 @@
    "fieldtype": "Table",
    "label": "Add Documents",
    "options": "Application Documents"
+  },
+  {
+   "default": "0",
+   "fetch_from": "product_category.is_eesl_req",
+   "fieldname": "is_eesl_req",
+   "fieldtype": "Data",
+   "label": "EESL Req"
+  },
+  {
+   "fieldname": "product_test_report_section",
+   "fieldtype": "Section Break",
+   "label": "Product Test Reports"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "product_test_reports",
+   "fieldtype": "Table",
+   "label": "Product Test Reports",
+   "options": "Customer Product Test Report"
+  },
+  {
+   "fieldname": "mail_id",
+   "fieldtype": "Data",
+   "label": "Mail Id"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-10-09 17:42:12.932438",
+ "modified": "2020-10-27 10:35:51.881402",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",
@@ -285,6 +313,18 @@
    "role": "All",
    "share": 1,
    "submit": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
    "write": 1
   }
  ],
