@@ -37,8 +37,6 @@
   "amended_from",
   "status",
   "sales_order_id",
-  "documents_section",
-  "add_documents",
   "product_test_report_section",
   "product_test_reports"
  ],
@@ -232,23 +230,12 @@
    "options": "\nECAS\nEQM\nSABER\nSQM\nSASO IECEE\nHALAL\nESMA G-Mark\nSASO G Mark"
   },
   {
-   "fieldname": "documents_section",
-   "fieldtype": "Section Break",
-   "label": "Documents"
-  },
-  {
-   "allow_on_submit": 1,
-   "fieldname": "add_documents",
-   "fieldtype": "Table",
-   "label": "Add Documents",
-   "options": "Application Documents"
-  },
-  {
    "default": "0",
    "fetch_from": "product_category.is_eesl_req",
    "fieldname": "is_eesl_req",
    "fieldtype": "Data",
-   "label": "EESL Req"
+   "label": "EESL Req",
+   "read_only": 1
   },
   {
    "fieldname": "product_test_report_section",
@@ -263,6 +250,7 @@
    "options": "Customer Product Test Report"
   },
   {
+   "fetch_from": "customer.email_id",
    "fieldname": "mail_id",
    "fieldtype": "Data",
    "label": "Mail Id"
@@ -270,7 +258,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-10-27 10:49:43.414099",
+ "modified": "2020-10-27 14:06:31.570481",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",

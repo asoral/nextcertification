@@ -143,13 +143,13 @@ frappe.ui.form.on('Application', {
 //                };
 //            });
 //        },
-        is_eesl_req : function(frm) {
-            if (frm.doc.is_eesl_req == 1 ){
-                console.log("****");
-                 frm.fields_dict.product.grid.toggle_reqd("rating", frm.doc.is_eesl_req == 1);
-                 frm.fields_dict.product.grid.toggle_reqd("model_number", frm.doc.is_eesl_req == 1);
-            }
-        },
+//        is_eesl_req : function(frm) {
+//            if (frm.doc.is_eesl_req == 1 ){
+//                console.log("****");
+//                 frm.fields_dict.product.grid.toggle_reqd("rating", frm.doc.is_eesl_req == 1);
+//                 frm.fields_dict.product.grid.toggle_reqd("model_number", frm.doc.is_eesl_req == 1);
+//            }
+//        },
 
 
 });
