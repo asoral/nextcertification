@@ -2,7 +2,7 @@
 frappe.ui.form.on('Application', {
     // Get Item From (sales order) in Application
     onload: function(frm) {
-        if(frm.doc.workflow_state == "Send for Conformity Engg Approval"){
+        if(frm.doc.workflow_state == "Sent For Senior Conformity Engineer Approval"){
              frm.fields_dict.product.grid.toggle_reqd("rating", frm.doc.is_eesl_req == 1);
              frm.fields_dict.product.grid.toggle_reqd("model_number", frm.doc.is_eesl_req == 1);
              frm.fields_dict.product.grid.toggle_reqd("manufacturer", frm.doc.is_eesl_req == 1);
