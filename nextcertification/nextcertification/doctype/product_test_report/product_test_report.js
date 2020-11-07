@@ -16,8 +16,8 @@ frappe.ui.form.on('Product Test Report', {
 
                         },
                         get_query_filters: {
-                            docstatus : 1,
-                         //   status: "To Verify",
+//                            docstatus : 1,
+                            name: frm.doc.application || undefined,
                         //   status: ["not in", ["Approved", "Rejected","Draft"]]
                            // company: frm.doc.company
                         }

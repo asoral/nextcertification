@@ -2,28 +2,6 @@
 frappe.ui.form.on('Application', {
     // Get Item From (sales order) in Application
     onload: function(frm) {
-        if(frm.doc.workflow_state == "Sent For Senior Conformity Engineer Approval"){
-             frm.fields_dict.product.grid.toggle_reqd("rating", frm.doc.is_eesl_req == 1);
-             frm.fields_dict.product.grid.toggle_reqd("model_number", frm.doc.is_eesl_req == 1);
-             frm.fields_dict.product.grid.toggle_reqd("manufacturer", frm.doc.is_eesl_req == 1);
-             frm.fields_dict.product.grid.toggle_reqd("product_test_eport", frm.doc.is_eesl_req == 1);
-             frm.fields_dict.product.grid.toggle_reqd("brand_name", frm.doc.is_eesl_req == 1);
-             frm.fields_dict.product.grid.toggle_reqd("annual_energy_consumption", frm.doc.is_eesl_req == 1);
-             frm.fields_dict.product.grid.toggle_reqd("country_of_origin", frm.doc.is_eesl_req == 1);
-             frm.fields_dict.product.grid.toggle_reqd("description", frm.doc.is_eesl_req == 1);
-             frm.fields_dict.product.grid.toggle_reqd("applicable_standards_1", frm.doc.is_eesl_req == 1);
-
-
-             frm.fields_dict.product.grid.toggle_reqd("model_number", frm.doc.is_eesl_req == 0);
-             frm.fields_dict.product.grid.toggle_reqd("manufacturer", frm.doc.is_eesl_req == 0);
-             frm.fields_dict.product.grid.toggle_reqd("product_test_eport", frm.doc.is_eesl_req == 0);
-             frm.fields_dict.product.grid.toggle_reqd("brand_name", frm.doc.is_eesl_req == 0);
-             frm.fields_dict.product.grid.toggle_reqd("country_of_origin", frm.doc.is_eesl_req == 0);
-             frm.fields_dict.product.grid.toggle_reqd("description", frm.doc.is_eesl_req == 0);
-             frm.fields_dict.product.grid.toggle_reqd("applicable_standards_1", frm.doc.is_eesl_req == 0);
-
-        }
-
 
 //        cur_frm.page.menu.find("a:contains("+__("Email")+")").on('click', function() {
 //           setTimeout(() => {
@@ -58,15 +36,6 @@ frappe.ui.form.on('Application', {
                  ]
               }
           }
-
-
-//        if(frm.doc.workflow_state_field){
-//             frm.fields_dict.product.grid.toggle_reqd("rating", frm.doc.is_eesl_req == 1);
-//             frm.fields_dict.product.grid.toggle_reqd("model_number", frm.doc.is_eesl_req == 1);
-//             frm.fields_dict.product.grid.toggle_reqd("soc_print", frm.doc.is_eesl_req == 1);
-//             frm.fields_dict.product.grid.toggle_reqd("coc_print", frm.doc.is_eesl_req == 1);
-//        }
-
     },
 
     setup: function(frm) {
@@ -99,6 +68,8 @@ frappe.ui.form.on('Application', {
        frm.call('create_prod_rep').then(() => {
             frm.refresh();
         });
+
+
 
 //         $.each(frm.doc["product_test_reports"],function(i, product_test_reports)
 //            {

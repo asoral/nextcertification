@@ -16,7 +16,28 @@ class Application(WebsiteGenerator):
 		pass
 
 	def validate(self):
-		pass
+
+		if self.workflow_state == "Approved":
+			for itm in self.product:
+				if self.is_eesl_req != 0:
+					if not itm.rating:
+						frappe.throw("Rating Is Mendatory")
+				if self.is_eesl_req != 0:
+					if not itm.annual_energy_consumption:
+						frappe.throw("Annual Energy Consumption Is Mendatory")
+				if not itm.country_of_origin:
+					frappe.throw("Country of Origin Is Mendatory")
+				if not itm.model_number :
+					frappe.throw("Model Number Is Mendatory")
+				if not itm.description:
+					frappe.throw("Description Is Mendatory")
+				if not itm.manufacturer:
+					frappe.throw("manufacturer Is Mendatory")
+				if not itm.brand_name:
+					frappe.throw("brand_name Is Mendatory")
+
+
+
 
 	def onload(self):
 		load_address_and_contact(self)
