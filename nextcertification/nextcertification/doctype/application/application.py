@@ -17,30 +17,30 @@ class Application(WebsiteGenerator):
 
 	def validate(self):
 
-		if self.workflow_state == "Sent for Senior Conformity Engineer Approval":
+		if self.workflow_state == "Sent For Senior Conformity Engineer Approval":
 			if not self.checklist_tc:
-				frappe.throw("Checklist Is Mendatory")
+				frappe.throw("Checklist Is Mandatory")
 			if not self.eval_attachment:
-				frappe.throw("Checklist Files Is Mendatory")
+				frappe.throw("Checklist Files Is Mandatory")
 			for itm in self.product:
 				if self.is_eesl_req != 0:
 					if not itm.rating:
-						frappe.throw("Rating Is Mendatory")
+						frappe.throw("Rating Is Mandatory")
 				if self.is_eesl_req != 0:
 					if not itm.annual_energy_consumption:
-						frappe.throw("Annual Energy Consumption Is Mendatory")
+						frappe.throw("Annual Energy Consumption Is Mandatory")
 				if not itm.country_of_origin:
-					frappe.throw("Country of Origin Is Mendatory")
+					frappe.throw("Country of Origin Is Mandatory")
 				if not itm.model_number :
-					frappe.throw("Model Number Is Mendatory")
+					frappe.throw("Model Number Is Mandatory")
 				if not itm.description:
-					frappe.throw("Description Is Mendatory")
+					frappe.throw("Description Is Mandatory")
 				if not itm.manufacturer:
-					frappe.throw("manufacturer Is Mendatory")
+					frappe.throw("manufacturer Is Mandatory")
 				if not itm.brand_name:
-					frappe.throw("brand_name Is Mendatory")
+					frappe.throw("brand_name Is Mandatory")
 				if not itm.applicable_standards_1:
-					frappe.throw("Applicable Standards 1 Is Mendatory")
+					frappe.throw("Applicable Standards 1 Is Mandatory")
 
 
 
