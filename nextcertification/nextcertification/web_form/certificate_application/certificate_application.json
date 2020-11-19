@@ -19,7 +19,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2020-10-27 17:02:22.862257",
+ "modified": "2020-11-19 09:19:58.926035",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "certificate-application",
@@ -53,7 +53,7 @@
    "max_value": 0,
    "options": "PRD-.YYYY.-",
    "read_only": 0,
-   "reqd": 1,
+   "reqd": 0,
    "show_in_filter": 0
   },
   {
