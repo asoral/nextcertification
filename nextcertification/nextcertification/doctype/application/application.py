@@ -17,7 +17,11 @@ class Application(WebsiteGenerator):
 
 	def validate(self):
 
-		if self.workflow_state == "Approved":
+		if self.workflow_state == "Sent for Senior Conformity Engineer Approval":
+			if not self.checklist_tc:
+				frappe.throw("Checklist Is Mendatory")
+			if not self.eval_attachment:
+				frappe.throw("Checklist Files Is Mendatory")
 			for itm in self.product:
 				if self.is_eesl_req != 0:
 					if not itm.rating:
@@ -35,6 +39,8 @@ class Application(WebsiteGenerator):
 					frappe.throw("manufacturer Is Mendatory")
 				if not itm.brand_name:
 					frappe.throw("brand_name Is Mendatory")
+				if not itm.applicable_standards_1:
+					frappe.throw("Applicable Standards 1 Is Mendatory")
 
 
 

@@ -38,7 +38,9 @@
   "status",
   "sales_order_id",
   "product_test_report_section",
-  "product_test_reports"
+  "product_test_reports",
+  "other_documents_section",
+  "documents"
  ],
  "fields": [
   {
@@ -254,11 +256,23 @@
    "fieldname": "mail_id",
    "fieldtype": "Data",
    "label": "Mail Id"
+  },
+  {
+   "fieldname": "other_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Other Documents"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "Application Other Documents"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-10-27 14:06:31.570481",
+ "modified": "2020-11-19 09:32:37.410644",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",
