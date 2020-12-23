@@ -21,6 +21,35 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
             frm.set_df_property("click_to", "hidden", 1);
             frm.refresh_field("click_to")
         };
+        if (!frm.doc.__islocal && frm.doc.docstatus == 0 )
+        {
+            if(frm.doc.resume_time == 0 ){
+                frm.add_custom_button(__('Start Time'), function () {
+                    return frappe.call({
+                        method: 'nextcertification.nextcertification.doctype.schedule_of_certification.schedule_of_certification.start_time',
+                        args: {
+                            doc_name: frm.doc.name
+                        },
+                        callback: function() {
+                            frm.reload_doc();
+                        }
+                    });
+                }).addClass("btn-primary");
+            }
+            else{
+                frm.add_custom_button(__('Stop Time'), function () {
+                    return frappe.call({
+                        method: 'nextcertification.nextcertification.doctype.schedule_of_certification.schedule_of_certification.resume_time',
+                        args: {
+                            doc_name: frm.doc.name
+                        },
+                        callback: function() {
+                            frm.reload_doc();
+                        }
+                    });
+                }).addClass("btn-primary");
+            }
+        }
     },
 	  "application" : function(frm, cdt, cdn) {
             frm.set_query('test_report', function(doc){

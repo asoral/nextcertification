@@ -7,13 +7,51 @@ import frappe
 from frappe.model.document import Document
 from frappe.model.mapper import get_mapped_doc
 import json
+from datetime import datetime
 
 class SCHEDULEOFCERTIFICATION(Document):
 	def get_options(self, arg=None):
 		pass
 
-	def validate(self):
-		pass
+	def before_insert(self):
+		self.append("timer",{
+			'start_time': datetime.now()
+		})
+		self.resume_time = 1
+
+	def before_submit(self):
+		for res in self.timer:
+			if not res.end_time:
+				res.end_time = datetime.now()
+		self.resume_time = 0
+
+		query = frappe.db.sql("""select start_time from `tabCertificte Schedule Time` where parent = %s order by start_time limit 1""",(self.name), as_list=True)
+		if query:
+			total_seconds = (datetime.now() - query[0][0]).total_seconds()
+			if total_seconds:
+				self.total_time = total_seconds/60
+		self.db_update()
+
+@frappe.whitelist()
+def start_time(doc_name):
+	doc = frappe.get_doc("SCHEDULE OF CERTIFICATION",doc_name)
+	doc.append("timer", {
+		'start_time': datetime.now()
+	})
+	doc.resume_time = 1
+	doc.save(ignore_permissions=True)
+
+@frappe.whitelist()
+def resume_time(doc_name):
+	doc = frappe.get_doc("SCHEDULE OF CERTIFICATION", doc_name)
+	query = frappe.db.sql("""select name from `tabCertificte Schedule Time` where parent = %s order by start_time desc limit 1""",(doc.name),as_list=True)
+	if query:
+		doc_child = frappe.get_doc("Certificte Schedule Time",query[0][0])
+		doc_child.end_time = datetime.now()
+		doc_child.db_update()
+	doc.resume_time = 0
+	doc.db_update()
+
 
 @frappe.whitelist()
 def get_test_products(source_name, target_doc=None):
