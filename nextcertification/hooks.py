@@ -144,7 +144,7 @@ doc_events = {
         "after_insert" : "nextcertification.nextcertification.doctype.application.application.add_app_to_sales",
     },
     "Payment Entry": {
-		"before_save": "nextcertification.purchase_invoice.set_aplication"
+		"before_save": "nextcertification.payment_entry.set_aplication"
 	}
 }
 
