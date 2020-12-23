@@ -7,7 +7,7 @@ def get_data():
 		'transactions': [
 			{
 				'label': _('Fulfillment'),
-				'items': ['Sales Invoice']
+				'items': ['Sales Invoice','Payment Entry']
 			},
 			{
 				'label': _('Selling'),

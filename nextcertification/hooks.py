@@ -87,13 +87,7 @@ doctype_js = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+
 
 # Scheduled Tasks
 # ---------------
@@ -148,7 +142,10 @@ doc_events = {
     },
     "Application" : {
         "after_insert" : "nextcertification.nextcertification.doctype.application.application.add_app_to_sales",
-    }
+    },
+    "Payment Entry": {
+		"before_save": "nextcertification.purchase_invoice.set_aplication"
+	}
 }
 
 standard_portal_menu_items = [

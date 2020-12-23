@@ -136,22 +136,82 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
                      method: "nextcertification.nextcertification.doctype.schedule_of_certification.schedule_of_certification.fetch_product",
                      args: {
                         application: frm.doc.application,
+                        test_reports: frm.doc.test_report_child,
                         test_report: frm.doc.test_report
                      },
                      callback(r) {
-                        if (r.message) {
-                        console.log("product",r.message);
-                        var array = r.message;
-                        var array_len = array.length;
-                        for (var i=0; i< array_len; i++){
-                            console.log("array",array[i]['brand_name']);
-                            var child = frm.add_child("product_test");
-                            child.brand_name = array[i]['brand_name'];
-                            child.model_no = array[i]['model_number'];
-                            child.description = array[i]['description'];
-                            child.country = array[i]["country_of_origin"];
-                        }
-                        frm.refresh_fields();
+                        if (r.message)
+                        {
+                            var array = r.message;
+                            var array_len = array.length;
+                            frm.set_value('product_test', []);
+                            for (var i=0; i< array_len; i++)
+                            {
+                                var child = frm.add_child("product_test");
+                                child.brand_name=array[i]['brand_name'];
+                                child.manufacturer=array[i]['manufacturer'];
+                                child.product_test_eport=array[i]['product_test_eport'];
+                                child.product_test_report_2=array[i]['product_test_report_2'];
+                                child.product_test_report_3=array[i]['product_test_report_3'];
+                                child.annual_energy_consumption=array[i]['annual_energy_consumption'];
+                                child.rating=array[i]['rating'];
+                                child.model_number=array[i]['model_number'];
+                                child.country_of_origin=array[i]['country_of_origin'];
+                                child.description=array[i]['description'];
+                                child.soc_print=array[i]['soc_print'];
+                                child.coc_print=array[i]['coc_print'];
+                                child.applicable_standards_1=array[i]['applicable_standards_1'];
+                                child.applicable_standards_3=array[i]['applicable_standards_3'];
+                                child.applicable_standards_5=array[i]['applicable_standards_5'];
+                                child.applicable_standards_7=array[i]['applicable_standards_7'];
+                                child.applicable_standards_9=array[i]['applicable_standards_9'];
+                                child.applicable_standards_11=array[i]['applicable_standards_11'];
+                                child.applicable_standards_13=array[i]['applicable_standards_13'];
+                                child.applicable_standards_15=array[i]['applicable_standards_15'];
+                                child.applicable_standards_17=array[i]['applicable_standards_17'];
+                                child.applicable_standards_19=array[i]['applicable_standards_19'];
+                                child.applicable_standards_21=array[i]['applicable_standards_21'];
+                                child.applicable_standards_23=array[i]['applicable_standards_23'];
+                                child.applicable_standards_25=array[i]['applicable_standards_25'];
+                                child.applicable_standards_27=array[i]['applicable_standards_27'];
+                                child.applicable_standards_29=array[i]['applicable_standards_29'];
+                                child.applicable_standards_31=array[i]['applicable_standards_31'];
+                                child.applicable_standards_33=array[i]['applicable_standards_33'];
+                                child.applicable_standards_35=array[i]['applicable_standards_35'];
+                                child.applicable_standards_37=array[i]['applicable_standards_37'];
+                                child.applicable_standards_39=array[i]['applicable_standards_39'];
+                                child.applicable_standards_41=array[i]['applicable_standards_41'];
+                                child.applicable_standards_43=array[i]['applicable_standards_43'];
+                                child.applicable_standards_45=array[i]['applicable_standards_45'];
+                                child.applicable_standards_47=array[i]['applicable_standards_47'];
+                                child.applicable_standards_49=array[i]['applicable_standards_49'];
+                                child.applicable_standards_2=array[i]['applicable_standards_2'];
+                                child.applicable_standards_4=array[i]['applicable_standards_4'];
+                                child.applicable_standards_6=array[i]['applicable_standards_6'];
+                                child.applicable_standards_8=array[i]['applicable_standards_8'];
+                                child.applicable_standards_10=array[i]['applicable_standards_10'];
+                                child.applicable_standards_12=array[i]['applicable_standards_12'];
+                                child.applicable_standards_14=array[i]['applicable_standards_14'];
+                                child.applicable_standards_16=array[i]['applicable_standards_16'];
+                                child.applicable_standards_18=array[i]['applicable_standards_18'];
+                                child.applicable_standards_20=array[i]['applicable_standards_20'];
+                                child.applicable_standards_22=array[i]['applicable_standards_22'];
+                                child.applicable_standards_24=array[i]['applicable_standards_24'];
+                                child.applicable_standards_26=array[i]['applicable_standards_26'];
+                                child.applicable_standards_28=array[i]['applicable_standards_28'];
+                                child.applicable_standards_30=array[i]['applicable_standards_30'];
+                                child.applicable_standards_32=array[i]['applicable_standards_32'];
+                                child.applicable_standards_34=array[i]['applicable_standards_34'];
+                                child.applicable_standards_36=array[i]['applicable_standards_36'];
+                                child.applicable_standards_38=array[i]['applicable_standards_38'];
+                                child.applicable_standards_40=array[i]['applicable_standards_40'];
+                                child.applicable_standards_42=array[i]['applicable_standards_42'];
+                                child.applicable_standards_44=array[i]['applicable_standards_44'];
+                                child.applicable_standards_46=array[i]['applicable_standards_46'];
+                                child.applicable_standards_48=array[i]['applicable_standards_48'];
+                                child.applicable_standards_50=array[i]['applicable_standards_50'];
+                            }
+                            frm.refresh_field('product_test');
                         }
                      }
                   })

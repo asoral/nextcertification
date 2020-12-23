@@ -16,7 +16,6 @@ class Application(WebsiteGenerator):
 		pass
 
 	def validate(self):
-
 		if self.workflow_state == "Sent For Senior Conformity Engineer Approval":
 			if not self.checklist_tc:
 				frappe.throw("Checklist Is Mandatory")
@@ -41,9 +40,6 @@ class Application(WebsiteGenerator):
 					frappe.throw("brand_name Is Mandatory")
 				if not itm.applicable_standards_1:
 					frappe.throw("Applicable Standards 1 Is Mandatory")
-
-
-
 
 	def onload(self):
 		load_address_and_contact(self)
@@ -93,9 +89,7 @@ class Application(WebsiteGenerator):
 						"applicable_standards_45": j.applicable_standards_45,"applicable_standards_46": j.applicable_standards_46,
 						"applicable_standards_47": j.applicable_standards_47,"applicable_standards_48": j.applicable_standards_48,
 						"applicable_standards_49": j.applicable_standards_49,"applicable_standards_50": j.applicable_standards_50,
-
 					})
-
 					pro_test1.save(ignore_permissions = True)
 
 				if j.product_test_report_2:
@@ -129,8 +123,6 @@ class Application(WebsiteGenerator):
 		self.reload()
 
 
-
-
 def get_list_context(context=None):
 	return {
 		"title": _("Application"),
@@ -140,6 +132,7 @@ def get_list_context(context=None):
 		'no_breadcrumbs': True
 
 	}
+
 def get_issue_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by=None):
 	from frappe.www.list import get_list
 
@@ -267,7 +260,7 @@ def prod_cat_eesl(product_category):
 
 @frappe.whitelist()
 def update_test_report_name(name):
-	print("****************************************************************")
+	# print("****************************************************************")
 	frappe.db.sql(""" update `tabCustomer Product Test Report` set description = %(name)s where name = %(name)s 
 	 """,{'name':name})
 	frappe.db.commit()

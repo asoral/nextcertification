@@ -127,7 +127,7 @@
    "fieldname": "product_test",
    "fieldtype": "Table",
    "label": "Product List",
-   "options": "SCO Test Report"
+   "options": "Product"
   },
   {
    "fieldname": "sb2",
@@ -222,7 +222,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-10-09 17:17:47.785952",
+ "modified": "2020-12-23 13:13:17.534965",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "SCHEDULE OF CERTIFICATION",
