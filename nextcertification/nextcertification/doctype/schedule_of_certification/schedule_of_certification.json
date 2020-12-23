@@ -130,7 +130,7 @@
   {
    "fieldname": "product_test",
    "fieldtype": "Table",
-   "label": "Product List",
+   "label": "PRODUCT DETAILS AND TEST REPORTS",
    "options": "Product"
   },
   {
@@ -261,7 +261,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-12-23 16:50:50.291351",
+ "modified": "2020-12-23 16:54:15.880731",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "SCHEDULE OF CERTIFICATION",
