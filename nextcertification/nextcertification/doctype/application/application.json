@@ -20,6 +20,7 @@
   "product_category",
   "sub_category",
   "is_eesl_req",
+  "total_time",
   "section_break_conf_eng",
   "section_break_product",
   "product",
@@ -40,7 +41,10 @@
   "product_test_report_section",
   "product_test_reports",
   "other_documents_section",
-  "documents"
+  "documents",
+  "schedule_section",
+  "timer",
+  "resume_time"
  ],
  "fields": [
   {
@@ -268,11 +272,38 @@
    "fieldtype": "Table",
    "label": "Documents",
    "options": "Application Other Documents"
+  },
+  {
+   "description": "In Minute",
+   "fieldname": "total_time",
+   "fieldtype": "Float",
+   "label": "Total Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "schedule_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Schedule"
+  },
+  {
+   "fieldname": "timer",
+   "fieldtype": "Table",
+   "label": "Timer",
+   "options": "Certificte Schedule Time",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "resume_time",
+   "fieldtype": "Check",
+   "label": " Resume time",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-11-19 09:32:37.410644",
+ "modified": "2021-01-02 14:26:19.168166",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",

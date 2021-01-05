@@ -61,6 +61,35 @@ frappe.ui.form.on('Application', {
                 })
             }, __("Get items from"));
         };
+        if (!frm.doc.__islocal && frm.doc.docstatus == 0 )
+        {
+            if(frm.doc.resume_time == 0 ){
+                frm.add_custom_button(__('Start Time'), function () {
+                    return frappe.call({
+                        method: 'nextcertification.nextcertification.doctype.application.application.start_time',
+                        args: {
+                            doc_name: frm.doc.name
+                        },
+                        callback: function() {
+                            frm.reload_doc();
+                        }
+                    });
+                }).addClass("btn-primary");
+            }
+            else{
+                frm.add_custom_button(__('Stop Time'), function () {
+                    return frappe.call({
+                        method: 'nextcertification.nextcertification.doctype.application.application.resume_time',
+                        args: {
+                            doc_name: frm.doc.name
+                        },
+                        callback: function() {
+                            frm.reload_doc();
+                        }
+                    });
+                }).addClass("btn-primary");
+            }
+        }
 	},
 
 	after_save: function(frm){
