@@ -31,7 +31,7 @@ class Application(WebsiteGenerator):
 			total_seconds = (datetime.now() - query[0][0]).total_seconds()
 			if total_seconds:
 				self.total_time = total_seconds/60
-		self.db_update()
+		# self.db_update()
 
 	def get_options(self, arg=None):
 		pass
