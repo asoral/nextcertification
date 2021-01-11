@@ -20,17 +20,17 @@ class Application(WebsiteGenerator):
 		})
 		self.resume_time = 1
 
-	# def before_submit(self):
-	# 	for res in self.timer:
-	# 		if not res.end_time:
-	# 			res.end_time = datetime.now()
-	# 	self.resume_time = 0
-	#
-	# 	query = frappe.db.sql("""select start_time from `tabCertificte Schedule Time` where parent = %s order by start_time limit 1""",(self.name), as_list=True)
-	# 	if query:
-	# 		total_seconds = (datetime.now() - query[0][0]).total_seconds()
-	# 		if total_seconds:
-	# 			self.total_time = total_seconds/60
+	def before_submit(self):
+		for res in self.timer:
+			if not res.end_time:
+				res.end_time = datetime.now()
+		self.resume_time = 0
+
+		query = frappe.db.sql("""select start_time from `tabCertificte Schedule Time` where parent = %s order by start_time limit 1""",(self.name), as_list=True)
+		if query:
+			total_seconds = (datetime.now() - query[0][0]).total_seconds()
+			if total_seconds:
+				self.total_time = total_seconds/60
 		# self.db_update()
 
 	def get_options(self, arg=None):
