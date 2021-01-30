@@ -21,6 +21,7 @@
   "sub_category",
   "is_eesl_req",
   "total_time",
+  "primary_address",
   "section_break_conf_eng",
   "section_break_product",
   "product",
@@ -299,11 +300,16 @@
    "fieldtype": "Check",
    "label": " Resume time",
    "read_only": 1
+  },
+  {
+   "fieldname": "primary_address",
+   "fieldtype": "HTML",
+   "label": "Primary Address"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2021-01-02 14:26:19.168166",
+ "modified": "2021-01-30 11:36:44.087519",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "Application",

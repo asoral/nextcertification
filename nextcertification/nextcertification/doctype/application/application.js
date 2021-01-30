@@ -119,6 +119,22 @@ frappe.ui.form.on('Application', {
 //            });
 //            frappe.ui.toolbar.clear_cache();
     },
+    customer:function(frm,cdt,cdn)
+    {
+      frappe.call(
+      {
+        doc: frm.doc,
+        method:"get_address",
+        callback: function(r)
+        {
+          if(r.message)
+          {
+            $(frm.fields_dict["primary_address"].wrapper).html( r.message)
+            refresh_field("primary_address")
+          }
+        }
+      })
+    }
 
         //Evaluation Check List
 //        "checklist_tc" : function(frm) {
