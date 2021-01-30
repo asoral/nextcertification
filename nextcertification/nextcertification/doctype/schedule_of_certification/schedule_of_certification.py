@@ -14,8 +14,11 @@ class SCHEDULEOFCERTIFICATION(Document):
 		pass
 
 	def get_address(self):
-		get_address_value=frappe.db.get_value("Application",{"name":self.application},['primary_address'])
-		return get_address_value
+		if self.application:
+			app = frappe.get_doc("Application",self.application)
+			get_address_value=frappe.db.get_value("Customer",{"customer_name":app.customer},['primary_address'])
+			return get_address_value
+		return False
 
 @frappe.whitelist()
 def get_test_products(source_name, target_doc=None):

@@ -15,8 +15,10 @@ STANDARD_USERS = ("Guest", "Administrator","All")
 class Application(WebsiteGenerator):
 
 	def get_address(self):
-		get_address_value=frappe.db.get_value("Customer",{"customer_name":self.customer},['primary_address'])
-		return get_address_value
+		if self.customer:
+			get_address_value=frappe.db.get_value("Customer",{"customer_name":self.customer},['primary_address'])
+			return get_address_value
+		return False
 
 	def before_insert(self):
 		self.append("timer",{
