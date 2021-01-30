@@ -13,6 +13,10 @@ class SCHEDULEOFCERTIFICATION(Document):
 	def get_options(self, arg=None):
 		pass
 
+	def get_address(self):
+		get_address_value=frappe.db.get_value("Application",{"name":self.application},['primary_address'])
+		return get_address_value
+
 @frappe.whitelist()
 def get_test_products(source_name, target_doc=None):
 	def set_item_in_product_test_report(source,target):

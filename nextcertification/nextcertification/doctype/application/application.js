@@ -132,6 +132,11 @@ frappe.ui.form.on('Application', {
             $(frm.fields_dict["primary_address"].wrapper).html( r.message)
             refresh_field("primary_address")
           }
+          else
+          {
+            $(frm.fields_dict["primary_address"].wrapper).html("")
+            refresh_field("primary_address") 
+          }
         }
       })
     }

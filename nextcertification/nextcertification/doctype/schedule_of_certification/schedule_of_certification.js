@@ -217,5 +217,26 @@ frappe.ui.form.on('SCHEDULE OF CERTIFICATION', {
                   })
             }
   },
+  application:function(frm)
+    {
+      frappe.call(
+      {
+        doc: frm.doc,
+        method:"get_address",
+        callback: function(r)
+        {
+          if(r.message)
+          {
+            $(frm.fields_dict["primary_address"].wrapper).html( r.message)
+            refresh_field("primary_address")
+          }
+          else
+          {
+            $(frm.fields_dict["primary_address"].wrapper).html("")
+            refresh_field("primary_address") 
+          }
+        }
+      })
+    },
 
 });

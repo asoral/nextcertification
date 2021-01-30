@@ -9,6 +9,7 @@
   "application",
   "customer_name",
   "address",
+  "primary_address",
   "is_one",
   "cb",
   "date",
@@ -218,11 +219,16 @@
    "fieldtype": "Text",
    "label": "Address",
    "read_only": 1
+  },
+  {
+   "fieldname": "primary_address",
+   "fieldtype": "HTML",
+   "label": "Primary Address"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2021-01-02 14:21:53.245522",
+ "modified": "2021-01-30 15:57:06.820605",
  "modified_by": "Administrator",
  "module": "Nextcertification",
  "name": "SCHEDULE OF CERTIFICATION",
